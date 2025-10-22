@@ -9,7 +9,7 @@ export default function Portfolio() {
   const site = {
     name: "Talha Bilal",
     title: "Senior Software Engineer (Java Spring Boot & PKI)",
-    tagline: "Java Spring Boot | PKI | Cryptography | HSM Integration",
+    tagline: "Java Spring Boot | PKI | Cryptography",
     email: "talha.at43@gmail.com",
     linkedin: "https://www.linkedin.com/in/talha-bilal-a74477154",
     github: "https://github.com/your-username", // update after creating repo
