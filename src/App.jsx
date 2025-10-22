@@ -12,9 +12,7 @@ export default function Portfolio() {
     tagline: "Java Spring Boot | PKI | Cryptography",
     email: "talha.at43@gmail.com",
     linkedin: "https://www.linkedin.com/in/talha-bilal-a74477154",
-    github: "https://github.com/your-username", // update after creating repo
-    cvCorporate: "/assets/Talha_Bilal_CV_Corporate.pdf",
-    cvModern: "/assets/Talha_Bilal_CV_Modern.pdf",
+    cvLink: "/portfolio/assets/Talha_Bilal_CV.pdf",
   };
 
   const skills = [
@@ -44,7 +42,7 @@ export default function Portfolio() {
     {
       company: "Dictalabs",
       title: "Technical Team Lead (Java Spring Boot & PKI)",
-      period: "Apr 2024 – Present",
+      period: "AUG 2024 – Present",
       bullets: [
         "Lead team delivering secure, microservices-based PKI and cryptographic systems.",
         "Architected HSM-integrated services for key management, digital signatures, and timestamping.",
@@ -55,7 +53,7 @@ export default function Portfolio() {
     {
       company: "Codegic",
       title: "Senior Software Engineer (Java Spring Boot & PKI)",
-      period: "Nov 2020 – Mar 2024",
+      period: "AUG 2021 – JULY 2024",
       bullets: [
         "Built PKI infrastructure: CA, OCSP/CRL responders, certificate lifecycle management.",
         "Developed secure email signing (S/MIME/CMS) and Crypto-Core microservices.",
@@ -122,7 +120,7 @@ export default function Portfolio() {
               {dark ? "Dark" : "Light"}
             </button>
 
-            <a href={site.cvModern} className="px-3 py-1 rounded-lg bg-green-400 text-slate-900 font-medium" target="_blank" rel="noreferrer">
+            <a href={site.cvLink} className="px-3 py-1 rounded-lg bg-green-400 text-slate-900 font-medium" target="_blank" rel="noreferrer">
               Download CV
             </a>
           </div>
@@ -160,7 +158,7 @@ export default function Portfolio() {
             <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="p-6 rounded-2xl bg-slate-800/40">
               <h2 className="text-xl font-semibold">Professional Summary</h2>
               <p className="mt-2 text-sm leading-relaxed">
-                Senior Software Engineer and Technical Team Lead with over 5 years of experience architecting and delivering secure, enterprise-grade systems using Java Spring Boot and Public Key Infrastructure (PKI). Specialized in designing microservices architectures, developing cryptographic services, and integrating with HSM platforms (AWS CloudHSM, Utimaco, SoftHSM2). Skilled in Spring Security, AOP, RESTful APIs, and OpenAPI, with hands-on expertise in Bouncy Castle and IAIK libraries.
+                Senior Software Engineer and Technical Team Lead with over 4 years of experience architecting and delivering secure, enterprise-grade systems using Java Spring Boot and Public Key Infrastructure (PKI). Specialized in designing microservices architectures, developing cryptographic services, and integrating with HSM platforms (AWS CloudHSM, Utimaco, SoftHSM2). Skilled in Spring Security, AOP, RESTful APIs, and OpenAPI, with hands-on expertise in Bouncy Castle and IAIK libraries.
               </p>
             </motion.div>
 
