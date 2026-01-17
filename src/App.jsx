@@ -133,7 +133,6 @@ export default function Portfolio() {
               <h3 className="font-semibold mb-2">Contact</h3>
               <p className="text-sm">📧 <a href={`mailto:${site.email}`} className="underline">{site.email}</a></p>
               <p className="text-sm">🔗 <a href={site.linkedin} target="_blank" rel="noreferrer" className="underline">LinkedIn</a></p>
-              <p className="text-sm">🐙 <a href={site.github} target="_blank" rel="noreferrer" className="underline">GitHub</a></p>
             </section>
 
             <section className="p-4 rounded-2xl bg-slate-800/50">
