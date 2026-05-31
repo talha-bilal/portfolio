@@ -246,56 +246,50 @@
   ],
   "openSource": {
     "title": "Public engineering samples",
+    "subtitle": "Open a project on GitHub for diagrams, use cases, and runnable demos.",
     "repo": "https://github.com/talha-bilal/trust-platform-samples",
     "items": [
       {
-        "name": "Keycloak PKI Authenticator SPI",
-        "detail": "Authenticator SPI sample for certificate-subject gate (Maven, Keycloak 24)",
-        "path": "keycloak-pki-authenticator",
+        "name": "Keycloak IAM Integration",
+        "detail": "Custom SPI, architecture diagrams, Docker demo, and source code",
         "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/keycloak-pki-authenticator",
-        "icon": "keycloak"
+        "icon": "keycloak",
+        "tech": ["Keycloak", "Java SPI", "OIDC", "PKI"]
       },
       {
-        "name": "CSC Remote Signing OpenAPI",
-        "detail": "OpenAPI 3 spec for CSC-style credentials, authorize, and signHash flows",
-        "path": "csc-remote-signing-openapi",
+        "name": "CSC Remote Signing Service",
+        "detail": "OpenAPI contract, Spring mock server, Postman/curl demo, sequence diagrams",
         "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/csc-remote-signing-openapi",
-        "icon": "api"
+        "icon": "api",
+        "tech": ["CSC API", "Spring Boot", "OAuth 2.0", "OpenAPI"]
       },
       {
-        "name": "Signing platform architecture",
-        "detail": "Reference diagrams: PKI, CSC, HSM, Keycloak, and audit paths",
-        "path": "signing-platform-architecture",
+        "name": "PKI Server",
+        "detail": "CA lifecycle, OCSP/CRL, multi-tenant issuance — diagrams and use case",
+        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/pki-server",
+        "icon": "diagram",
+        "tech": ["PKI", "CA", "OCSP", "CRL", "HSM"]
+      },
+      {
+        "name": "PKCS#11 HSM Service",
+        "detail": "HSM abstraction, session pooling, signing flow diagrams",
+        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/pkcs11-hsm-service",
+        "icon": "diagram",
+        "tech": ["PKCS#11", "AWS CloudHSM", "Spring Boot"]
+      },
+      {
+        "name": "Java Card Applets",
+        "detail": "GlobalPlatform lifecycle, issuance ceremony, on-card crypto diagrams",
+        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/java-card-applets",
+        "icon": "keycloak",
+        "tech": ["Java Card", "GlobalPlatform", "APDU"]
+      },
+      {
+        "name": "Signing Platform (full stack)",
+        "detail": "End-to-end platform, deployment topology, cross-service map",
         "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/signing-platform-architecture",
-        "icon": "diagram"
-      },
-      {
-        "name": "Architecture diagrams (6)",
-        "detail": "Mermaid: platform, CSC sequence, Keycloak, HSM, PKI lifecycle, deployment",
-        "path": "docs/diagrams",
-        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/docs/diagrams",
-        "icon": "diagram"
-      },
-      {
-        "name": "Complex use cases (5)",
-        "detail": "CSC mobile signing, PDF workflow, multi-tenant PKI, Java Card, IAM",
-        "path": "docs/use-cases",
-        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/docs/use-cases",
-        "icon": "api"
-      },
-      {
-        "name": "Java Card lifecycle diagram",
-        "detail": "GlobalPlatform, APDU, on-card keys, issuance and signing ceremonies",
-        "path": "docs/diagrams/07-java-card-applet-lifecycle.md",
-        "url": "https://github.com/talha-bilal/trust-platform-samples/blob/main/docs/diagrams/07-java-card-applet-lifecycle.md",
-        "icon": "diagram"
-      },
-      {
-        "name": "CSC Spring mock server",
-        "detail": "Runnable Spring Boot API — OAuth, authorize, signHash on localhost:8081",
-        "path": "csc-mock-server",
-        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/csc-mock-server",
-        "icon": "api"
+        "icon": "diagram",
+        "tech": ["Architecture", "Microservices", "Audit"]
       }
     ]
   },
@@ -311,7 +305,7 @@
       },
       {
         "label": "GitHub samples",
-        "detail": "trust-platform-samples — SPI, OpenAPI, architecture docs",
+        "detail": "Six portfolio projects — open any folder for diagrams, use cases, and demos",
         "url": "https://github.com/talha-bilal/trust-platform-samples",
         "icon": "repo",
         "cta": "Open samples repo"
@@ -340,6 +334,7 @@
   },
   "nav": [
     { "id": "about", "label": "About" },
+    { "id": "samples", "label": "Samples" },
     { "id": "case-studies", "label": "Case studies" },
     { "id": "experience", "label": "Experience" },
     { "id": "projects", "label": "Projects" },

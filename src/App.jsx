@@ -247,31 +247,35 @@ export default function Portfolio() {
             </LinkCardGrid>
           </motion.div>
 
-          <motion.div {...fade} className="mt-8">
-            <h3 className="font-display mb-4 text-lg font-semibold">{openSource.title}</h3>
-            <LinkCardGrid>
-              {openSource.items.map((sample) => (
-                <LinkCard
-                  key={sample.name}
-                  href={sample.url || `${openSource.repo}/tree/main/${sample.path}`}
-                  title={sample.name}
-                  description={sample.detail}
-                  icon={sample.icon || "repo"}
-                  cta="View sample"
-                />
-              ))}
-            </LinkCardGrid>
-            <motion.a
-              href={openSource.repo}
-              className="btn-primary btn-motion mt-4 inline-flex"
-              target="_blank"
-              rel="noreferrer"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Browse full repository <ExternalIcon />
-            </motion.a>
-          </motion.div>
+        </section>
+
+        {/* Public samples — project repos only */}
+        <section id="samples" className="section-pad">
+          <SectionTitle
+            title={openSource.title}
+            subtitle={openSource.subtitle || "Each card opens the project on GitHub with full detail."}
+          />
+          <LinkCardGrid>
+            {openSource.items.map((project) => (
+              <LinkCard
+                key={project.name}
+                href={project.url}
+                title={project.name}
+                description={project.detail}
+                icon={project.icon || "repo"}
+                tech={project.tech || []}
+                cta="Open project"
+                variant="primary"
+              />
+            ))}
+          </LinkCardGrid>
+          <p className={`mt-4 text-center text-xs ${muted}`}>
+            All samples live in{" "}
+            <a href={openSource.repo} className={`${accent} hover:underline`} target="_blank" rel="noreferrer">
+              trust-platform-samples
+            </a>
+            — one folder per project.
+          </p>
         </section>
 
         {/* Case studies */}

@@ -56,7 +56,16 @@ function ArrowIcon() {
   );
 }
 
-export function LinkCard({ href, title, description, icon = "github", cta = "Open", variant = "default", target = "_blank" }) {
+export function LinkCard({
+  href,
+  title,
+  description,
+  icon = "github",
+  cta = "View on GitHub",
+  variant = "default",
+  target = "_blank",
+  tech = [],
+}) {
   const Icon = icons[icon] || icons.github;
 
   return (
@@ -74,6 +83,15 @@ export function LinkCard({ href, title, description, icon = "github", cta = "Ope
       <span className="link-card-body">
         <span className="link-card-title">{title}</span>
         <span className="link-card-desc">{description}</span>
+        {tech.length > 0 && (
+          <span className="mt-2 flex flex-wrap gap-1">
+            {tech.map((t) => (
+              <span key={t} className="rounded bg-white/5 px-1.5 py-0.5 text-[10px] text-slate-400">
+                {t}
+              </span>
+            ))}
+          </span>
+        )}
       </span>
       <span className="link-card-cta">
         {cta}

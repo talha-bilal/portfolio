@@ -41,4 +41,11 @@ if (featured.length < 1) {
   process.exit(1);
 }
 
+for (const item of data.openSource.items) {
+  if (!item.url?.startsWith("https://github.com/")) {
+    console.error(`openSource item missing GitHub url: ${item.name}`);
+    process.exit(1);
+  }
+}
+
 console.log("content/portfolio.json OK");
