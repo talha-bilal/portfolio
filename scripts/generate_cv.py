@@ -11,7 +11,7 @@ OUT = ROOT / "public" / "Talha_Bilal_CV.pdf"
 
 NAME = "Talha Bilal"
 TITLE = "Senior Software Engineer & Technical Team Lead"
-TAG = "Java | Spring Boot | PKI | Cryptography | Remote"
+TAG = "Java | Spring Boot | PKI | Keycloak | Java Card | Cryptography"
 CONTACT = [
     "talha.at43@gmail.com",
     "linkedin.com/in/talha-bilal-a74477154",
@@ -21,9 +21,10 @@ CONTACT = [
 
 SUMMARY = (
     "Senior engineer and technical lead with 4+ years building secure enterprise platforms "
-    "on Java Spring Boot and PKI. Designs microservices for certificate lifecycle, digital "
-    "signing, and HSM integration (AWS CloudHSM, Utimaco, SoftHSM2). Experienced in Spring "
-    "Security, REST/OpenAPI, Bouncy Castle, PKCS#11, and leading distributed engineering teams."
+    "on Java Spring Boot, PKI, and identity systems. Designs microservices for certificate "
+    "lifecycle, digital signing, and HSM integration (AWS CloudHSM, Utimaco, SoftHSM2). "
+    "Experienced in end-to-end Keycloak integration with custom SPI development, Java Card "
+    "applet design, Spring Security, REST/OpenAPI, Bouncy Castle, and PKCS#11."
 )
 
 EXPERIENCE = [
@@ -34,6 +35,8 @@ EXPERIENCE = [
             "Lead team delivering microservices PKI and cryptographic systems.",
             "Architect HSM services for key management, signatures, and RFC 3161 timestamping.",
             "Own PKCS#11 integrations (AWS CloudHSM, SoftHSM2); improve signing reliability.",
+            "Led complete Keycloak integration with custom SPI providers for platform auth flows.",
+            "Develop Java Card applets for secure on-card keys and cryptographic operations.",
         ],
     ),
     (
@@ -42,6 +45,8 @@ EXPERIENCE = [
         [
             "Built CA, OCSP/CRL, and certificate lifecycle management.",
             "Developed S/MIME/CMS signing and Crypto-Core microservices with HSM integration.",
+            "Delivered Keycloak SSO/OIDC and custom SPI extensions for internal services.",
+            "Implemented Java Card applets and host apps for smart-card issuance workflows.",
             "Implemented CI/CD, Docker, and performance tuning for production crypto services.",
         ],
     ),
@@ -49,10 +54,13 @@ EXPERIENCE = [
 
 SKILLS = (
     "Java 21/17, Spring Boot, Spring Security, Microservices, REST, OpenAPI, PKI, PKCS#11, "
-    "Bouncy Castle, IAIK, S/MIME, AWS CloudHSM, Docker, Jenkins, RabbitMQ, Redis, PostgreSQL, MySQL"
+    "Keycloak, OAuth 2.0, OIDC, Keycloak SPI, Java Card, GlobalPlatform, Bouncy Castle, IAIK, "
+    "S/MIME, AWS CloudHSM, SoftHSM2, Docker, Jenkins, RabbitMQ, Redis, PostgreSQL, MySQL"
 )
 
 PROJECTS = [
+    "Keycloak IAM Integration - realms, OIDC clients, custom SPI providers",
+    "Java Card Applets - secure on-card crypto and credential operations",
     "PKI Server - CA lifecycle, OCSP/CRL, HSM-backed issuance",
     "Secure Email Signing - S/MIME/CMS with RSA & ECDSA",
     "Workflow Management - PDF signing, approvals, audit trails",

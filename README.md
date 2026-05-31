@@ -1,6 +1,6 @@
 # Talha Bilal — Portfolio
 
-Professional portfolio for **Talha Bilal**, Senior Software Engineer & Technical Team Lead (Java Spring Boot, PKI, cryptography). Built for GitHub Pages and remote hiring.
+Professional portfolio for **Talha Bilal**, Senior Software Engineer & Technical Team Lead (Java Spring Boot, PKI, Keycloak, Java Card). Built for GitHub Pages.
 
 **Live site:** [talha-bilal.github.io/portfolio](https://talha-bilal.github.io/portfolio/)
 

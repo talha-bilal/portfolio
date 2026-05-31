@@ -133,7 +133,7 @@ export default function Portfolio() {
             <p className={`mt-4 max-w-2xl text-lg ${muted}`}>{summary}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href={`mailto:${site.email}?subject=Remote%20opportunity`} className="btn-primary">
+              <a href={`mailto:${site.email}?subject=Opportunity`} className="btn-primary">
                 Get in touch
               </a>
               <a href={cvUrl} className="btn-secondary" target="_blank" rel="noreferrer">
@@ -159,11 +159,11 @@ export default function Portfolio() {
         </section>
 
         <section id="about" className="section-pad">
-          <SectionTitle title="About" subtitle="What I bring to remote teams" />
+          <SectionTitle title="About" subtitle="Engineering focus" />
           <motion.div {...fade} className={`${card} p-6 md:p-8`}>
             <p className={`leading-relaxed ${dark ? "text-slate-300" : "text-slate-700"}`}>{summary}</p>
             <p className={`mt-4 text-sm ${muted}`}>
-              Based in {site.location}. Experienced collaborating across time zones, async standups, and written specs — with a track record in regulated, security-sensitive domains.
+              Based in {site.location}. Track record in regulated, security-sensitive domains — PKI, IAM (Keycloak), and smart-card (Java Card) systems.
             </p>
           </motion.div>
         </section>
@@ -243,10 +243,10 @@ export default function Portfolio() {
           <motion.div {...fade} className={`${card} border-teal-500/20 p-8 text-center md:p-10`}>
             <h2 className="font-display text-2xl font-semibold md:text-3xl">Let&apos;s work together</h2>
             <p className={`mx-auto mt-3 max-w-lg text-sm ${muted}`}>
-              Hiring for a remote backend or security engineering role? Send a short note with the role and stack — I usually reply within 1–2 business days.
+              Hiring for backend, security, or IAM engineering? Send a short note with the role and stack — I usually reply within 1–2 business days.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <a href={`mailto:${site.email}?subject=Remote%20opportunity`} className="btn-primary">
+              <a href={`mailto:${site.email}?subject=Opportunity`} className="btn-primary">
                 {site.email}
               </a>
               <a href={site.linkedin} className="btn-secondary" target="_blank" rel="noreferrer">
