@@ -1,223 +1,279 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  site,
+  summary,
+  skillGroups,
+  highlights,
+  experience,
+  projects,
+  education,
+  nav,
+} from "./data/site";
 
-// Default export React component for portfolio
+const fade = {
+  initial: { opacity: 0, y: 12 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-40px" },
+  transition: { duration: 0.45 },
+};
+
+function ThemeToggle({ dark, onToggle }) {
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      className="btn-ghost"
+      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      {dark ? (
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      ) : (
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
+function ExternalIcon() {
+  return (
+    <svg className="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+    </svg>
+  );
+}
+
 export default function Portfolio() {
   const [dark, setDark] = useState(true);
-  const toggleDark = () => setDark((d) => !d);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const cvUrl = `${import.meta.env.BASE_URL}${site.cvFile}`;
 
-  const site = {
-    name: "Talha Bilal",
-    title: "Senior Software Engineer (Java Spring Boot & PKI)",
-    tagline: "Java Spring Boot | PKI | Cryptography",
-    email: "talha.at43@gmail.com",
-    linkedin: "https://www.linkedin.com/in/talha-bilal-a74477154",
-    cvLink: "/portfolio/assets/Talha_Bilal_CV.pdf",
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
+
+  const scrollTo = (id) => {
+    setMenuOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const skills = [
-    "Java (21/17)",
-    "Spring Boot",
-    "Spring Security",
-    "AOP",
-    "RESTful APIs",
-    "OpenAPI",
-    "Microservices",
-    "Bouncy Castle",
-    "IAIK",
-    "PKCS#11",
-    "AWS CloudHSM",
-    "Utimaco",
-    "SoftHSM2",
-    "RabbitMQ",
-    "Redis",
-    "Docker",
-    "Jenkins",
-    "Gradle / Maven",
-    "PostgreSQL",
-    "MySQL",
-  ];
+  const shell = dark
+    ? "min-h-screen bg-slate-950 text-slate-100 selection:bg-teal-500/30"
+    : "min-h-screen bg-slate-50 text-slate-900 selection:bg-teal-600/20";
 
-  const experience = [
-    {
-      company: "Dictalabs",
-      title: "Technical Team Lead (Java Spring Boot & PKI)",
-      period: "AUG 2024 – Present",
-      bullets: [
-        "Lead team delivering secure, microservices-based PKI and cryptographic systems.",
-        "Architected HSM-integrated services for key management, digital signatures, and timestamping.",
-        "Oversaw PKCS#11 integrations across AWS CloudHSM and SoftHSM2 environments.",
-        "Improved reliability and performance of signing workflows.",
-      ],
-    },
-    {
-      company: "Codegic",
-      title: "Senior Software Engineer (Java Spring Boot & PKI)",
-      period: "AUG 2021 – JULY 2024",
-      bullets: [
-        "Built PKI infrastructure: CA, OCSP/CRL responders, certificate lifecycle management.",
-        "Developed secure email signing (S/MIME/CMS) and Crypto-Core microservices.",
-        "Integrated Bouncy Castle and IAIK with Spring Boot microservices and HSMs.",
-        "Implemented CI/CD pipelines, containerization, and performance tuning.",
-      ],
-    },
-  ];
-
-  const projects = [
-    {
-      name: "PKI Server",
-      desc:
-        "End-to-end Certificate Authority and lifecycle management platform. Features OCSP/CRL, HSM-backed key storage, multi-tenant issuance policies, and automatic renewal workflows.",
-      tech: ["Java", "Spring Boot", "PKCS#11", "OCSP", "CRL", "PostgreSQL", "HSM"],
-    },
-    {
-      name: "Secure Email Signing Server",
-      desc:
-        "S/MIME and CMS-based signing and verification service with support for RSA and ECDSA, automated certificate selection, and integration with enterprise mail systems.",
-      tech: ["Java", "Spring Boot", "Bouncy Castle", "S/MIME"],
-    },
-    {
-      name: "Workflow Management System",
-      desc:
-        "Secure PDF signing and multi-level approval flows with certificate-based authentication, timestamping, and full audit trails for compliance.",
-      tech: ["Spring Boot", "PDF Signing", "Timestamping", "PKI"],
-    },
-    {
-      name: "Timestamp Server (TSA)",
-      desc: "RFC 3161 compliant Timestamp Authority for verifiable timestamps used across signing services and legal artifacts.",
-      tech: ["Java", "RFC 3161", "Bouncy Castle"],
-    },
-    {
-      name: "PKCS#11 Service",
-      desc:
-        "RESTful abstraction layer for HSMs (AWS CloudHSM, Utimaco, SoftHSM2) providing secure key ops, session management, and role-based access controls for signing services.",
-      tech: ["PKCS#11", "HSM", "Spring Boot"],
-    },
-    {
-      name: "Crypto-Core",
-      desc:
-        "Centralized cryptographic microservice handling key generation, CSR signing, encryption/decryption, and in-memory key isolation for multi-tenant systems.",
-      tech: ["Java", "Spring Boot", "Bouncy Castle", "IAIK"],
-    },
-  ];
+  const card = dark ? "card-dark" : "card-light";
+  const muted = dark ? "text-slate-400" : "text-slate-600";
+  const accent = dark ? "text-teal-400" : "text-teal-700";
 
   return (
-    <div className={dark ? "min-h-screen bg-slate-900 text-slate-100" : "min-h-screen bg-white text-slate-900"}>
-      <div className="max-w-5xl mx-auto p-6">
-        <header className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-semibold">{site.name}</h1>
-            <p className="text-sm opacity-80">{site.title}</p>
-            <p className="text-xs mt-1 text-green-300">{site.tagline}</p>
-          </div>
+    <div className={shell}>
+      <div className="hero-glow pointer-events-none fixed inset-0 -z-10" aria-hidden />
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={toggleDark}
-              className="px-3 py-1 rounded-lg border border-slate-700 hover:bg-slate-800"
-              aria-label="Toggle theme"
-            >
-              {dark ? "Dark" : "Light"}
-            </button>
+      <header className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur-md dark:bg-slate-950/80">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
+          <button type="button" onClick={() => scrollTo("top")} className="text-left">
+            <span className="font-display text-lg font-semibold tracking-tight">{site.name}</span>
+            <span className={`block text-xs ${muted}`}>{site.focus}</span>
+          </button>
 
-            <a href={site.cvLink} className="px-3 py-1 rounded-lg bg-green-400 text-slate-900 font-medium" target="_blank" rel="noreferrer">
-              Download CV
+          <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+            {nav.map((item) => (
+              <button key={item.id} type="button" onClick={() => scrollTo(item.id)} className="nav-link">
+                {item.label}
+              </button>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <ThemeToggle dark={dark} onToggle={() => setDark((d) => !d)} />
+            <a href={cvUrl} className="btn-primary hidden sm:inline-flex" target="_blank" rel="noreferrer">
+              Resume
             </a>
+            <button
+              type="button"
+              className="btn-ghost md:hidden"
+              aria-expanded={menuOpen}
+              aria-label="Open menu"
+              onClick={() => setMenuOpen((o) => !o)}
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeWidth={1.5} d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 8h16M4 16h16"} />
+              </svg>
+            </button>
           </div>
-        </header>
+        </div>
 
-        <main className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Left Column */}
-          <aside className="md:col-span-1 space-y-6">
-            <section className="p-4 rounded-2xl bg-slate-800/50">
-              <h3 className="font-semibold mb-2">Contact</h3>
-              <p className="text-sm">📧 <a href={`mailto:${site.email}`} className="underline">{site.email}</a></p>
-              <p className="text-sm">🔗 <a href={site.linkedin} target="_blank" rel="noreferrer" className="underline">LinkedIn</a></p>
-            </section>
-
-            <section className="p-4 rounded-2xl bg-slate-800/50">
-              <h3 className="font-semibold mb-2">Core Skills</h3>
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                {skills.map((s) => (
-                  <span key={s} className="inline-block bg-slate-700/40 px-2 py-1 rounded">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </section>
-
-            <section className="p-4 rounded-2xl bg-slate-800/50">
-              <h3 className="font-semibold mb-2">Education</h3>
-              <p className="text-sm">BS in Computer Science — KFUEIT, 2021</p>
-            </section>
-          </aside>
-
-          {/* Right Column */}
-          <section className="md:col-span-2 space-y-6">
-            <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="p-6 rounded-2xl bg-slate-800/40">
-              <h2 className="text-xl font-semibold">Professional Summary</h2>
-              <p className="mt-2 text-sm leading-relaxed">
-                Senior Software Engineer and Technical Team Lead with over 4 years of experience architecting and delivering secure, enterprise-grade systems using Java Spring Boot and Public Key Infrastructure (PKI). Specialized in designing microservices architectures, developing cryptographic services, and integrating with HSM platforms (AWS CloudHSM, Utimaco, SoftHSM2). Skilled in Spring Security, AOP, RESTful APIs, and OpenAPI, with hands-on expertise in Bouncy Castle and IAIK libraries.
-              </p>
-            </motion.div>
-
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Experience</h3>
-              {experience.map((exp) => (
-                <motion.article key={exp.company} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="p-4 rounded-2xl bg-slate-800/40">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h4 className="font-medium">{exp.title}</h4>
-                      <p className="text-sm opacity-80">{exp.company} • {exp.period}</p>
-                    </div>
-                  </div>
-                  <ul className="mt-3 list-disc list-inside text-sm">
-                    {exp.bullets.map((b, i) => (
-                      <li key={i}>{b}</li>
-                    ))}
-                  </ul>
-                </motion.article>
+        {menuOpen && (
+          <nav className="border-t border-white/5 px-5 py-3 md:hidden" aria-label="Mobile">
+            <div className="flex flex-col gap-1">
+              {nav.map((item) => (
+                <button key={item.id} type="button" onClick={() => scrollTo(item.id)} className="nav-link w-full text-left py-2">
+                  {item.label}
+                </button>
               ))}
+              <a href={cvUrl} className="btn-primary mt-2 justify-center" target="_blank" rel="noreferrer">
+                Resume
+              </a>
+            </div>
+          </nav>
+        )}
+      </header>
+
+      <main id="top" className="mx-auto max-w-6xl px-5 pb-16">
+        <section className="py-14 md:py-20">
+          <motion.div {...fade}>
+            <span className="badge">{site.availability}</span>
+            <h1 className="font-display mt-5 max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl lg:text-6xl">
+              {site.role}
+            </h1>
+            <p className={`mt-4 max-w-2xl text-lg ${muted}`}>{summary}</p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={`mailto:${site.email}?subject=Remote%20opportunity`} className="btn-primary">
+                Get in touch
+              </a>
+              <a href={cvUrl} className="btn-secondary" target="_blank" rel="noreferrer">
+                Download resume
+              </a>
+              <a href={site.linkedin} className="btn-secondary" target="_blank" rel="noreferrer">
+                LinkedIn <ExternalIcon />
+              </a>
+              <a href={site.github} className="btn-secondary" target="_blank" rel="noreferrer">
+                GitHub <ExternalIcon />
+              </a>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Projects</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {projects.map((p) => (
-                  <motion.div whileHover={{ y: -6 }} key={p.name} className="p-4 rounded-2xl bg-slate-800/40">
-                    <h4 className="font-semibold">{p.name}</h4>
-                    <p className="text-sm mt-2">{p.desc}</p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {p.tech.map((t) => (
-                        <span key={t} className="text-xs px-2 py-1 rounded bg-slate-700/30">{t}</span>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-800/40">
-              <h3 className="text-lg font-semibold mb-2">Contact</h3>
-              <p className="text-sm mb-3">Interested in collaborating or hiring? Send a short note — I typically respond via email.</p>
-              <a className="inline-block bg-green-400 text-slate-900 px-4 py-2 rounded" href={`mailto:${site.email}`}>Email Me</a>
-            </div>
-          </section>
-        </main>
-
-        <footer className="mt-8 text-center text-xs opacity-70">
-          © {new Date().getFullYear()} {site.name}. Built with React + Tailwind.
-        </footer>
-      </div>
-
-      {/* Floating theme label */}
-      <AnimatePresence>
-        {dark ? (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed right-4 bottom-4 p-2 rounded-full bg-slate-800/60 text-sm">
-            Dark mode
+            <dl className="mt-12 grid grid-cols-3 gap-4 max-w-lg">
+              {highlights.map((h) => (
+                <div key={h.label} className={card}>
+                  <dt className={`text-xs uppercase tracking-wider ${muted}`}>{h.label}</dt>
+                  <dd className="font-display mt-1 text-2xl font-semibold">{h.value}</dd>
+                </div>
+              ))}
+            </dl>
           </motion.div>
-        ) : null}
-      </AnimatePresence>
+        </section>
+
+        <section id="about" className="section-pad">
+          <SectionTitle title="About" subtitle="What I bring to remote teams" />
+          <motion.div {...fade} className={`${card} p-6 md:p-8`}>
+            <p className={`leading-relaxed ${dark ? "text-slate-300" : "text-slate-700"}`}>{summary}</p>
+            <p className={`mt-4 text-sm ${muted}`}>
+              Based in {site.location}. Experienced collaborating across time zones, async standups, and written specs — with a track record in regulated, security-sensitive domains.
+            </p>
+          </motion.div>
+        </section>
+
+        <section id="experience" className="section-pad">
+          <SectionTitle title="Experience" subtitle="Leadership and hands-on delivery" />
+          <div className="space-y-5">
+            {experience.map((exp) => (
+              <motion.article key={exp.company} {...fade} className={`${card} p-6`}>
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <h3 className="font-display text-lg font-semibold">{exp.title}</h3>
+                    <p className={`text-sm ${accent}`}>{exp.company}</p>
+                  </div>
+                  <div className="text-right text-sm">
+                    <p className={muted}>{exp.period}</p>
+                    <p className="text-xs opacity-70">{exp.location}</p>
+                  </div>
+                </div>
+                <ul className={`mt-4 space-y-2 text-sm leading-relaxed ${dark ? "text-slate-300" : "text-slate-700"}`}>
+                  {exp.bullets.map((b) => (
+                    <li key={b} className="flex gap-2">
+                      <span className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${dark ? "bg-teal-400" : "bg-teal-600"}`} />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.article>
+            ))}
+          </div>
+        </section>
+
+        <section id="projects" className="section-pad">
+          <SectionTitle title="Projects" subtitle="Production systems in PKI & signing" />
+          <div className="grid gap-4 sm:grid-cols-2">
+            {projects.map((p) => (
+              <motion.div key={p.name} {...fade} whileHover={{ y: -4 }} className={`${card} flex flex-col p-5`}>
+                <h3 className="font-display font-semibold">{p.name}</h3>
+                <p className={`mt-2 flex-1 text-sm leading-relaxed ${muted}`}>{p.desc}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {p.tech.map((t) => (
+                    <span key={t} className="tech-pill">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        <section id="skills" className="section-pad">
+          <SectionTitle title="Skills" subtitle="Stack I use day to day" />
+          <div className="grid gap-4 md:grid-cols-2">
+            {skillGroups.map((g) => (
+              <motion.div key={g.label} {...fade} className={`${card} p-5`}>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-teal-400/90">{g.label}</h3>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {g.items.map((s) => (
+                    <li key={s}>
+                      <span className="tech-pill">{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div {...fade} className={`${card} mt-4 p-5`}>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-teal-400/90">Education</h3>
+            <p className="mt-2">
+              {education.degree} — {education.school}, {education.year}
+            </p>
+          </motion.div>
+        </section>
+
+        <section id="contact" className="section-pad">
+          <motion.div {...fade} className={`${card} border-teal-500/20 p-8 text-center md:p-10`}>
+            <h2 className="font-display text-2xl font-semibold md:text-3xl">Let&apos;s work together</h2>
+            <p className={`mx-auto mt-3 max-w-lg text-sm ${muted}`}>
+              Hiring for a remote backend or security engineering role? Send a short note with the role and stack — I usually reply within 1–2 business days.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <a href={`mailto:${site.email}?subject=Remote%20opportunity`} className="btn-primary">
+                {site.email}
+              </a>
+              <a href={site.linkedin} className="btn-secondary" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+            </div>
+          </motion.div>
+        </section>
+      </main>
+
+      <footer className="border-t border-white/5 py-8 text-center text-xs text-slate-500">
+        <p>
+          © {new Date().getFullYear()} {site.name}.{" "}
+          <a href={site.portfolio} className="underline-offset-2 hover:underline">
+            Portfolio
+          </a>
+        </p>
+      </footer>
+    </div>
+  );
+}
+
+function SectionTitle({ title, subtitle }) {
+  return (
+    <div className="mb-6">
+      <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">{title}</h2>
+      <p className="mt-1 text-sm text-slate-500">{subtitle}</p>
     </div>
   );
 }

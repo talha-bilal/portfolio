@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "cv": "python scripts/generate_cv.py",
+    "prebuild": "python scripts/generate_cv.py",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^10.18.0",

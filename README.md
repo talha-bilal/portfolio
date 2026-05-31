@@ -1,26 +1,36 @@
-# Talha Bilal Portfolio
+# Talha Bilal — Portfolio
 
-This is the professional portfolio site for **Talha Bilal** — Senior Software Engineer (Java Spring Boot & PKI).
+Professional portfolio for **Talha Bilal**, Senior Software Engineer & Technical Team Lead (Java Spring Boot, PKI, cryptography). Built for GitHub Pages and remote hiring.
 
-### 🚀 Features
-- Modern React + Tailwind + Framer Motion UI
-- Projects, Experience, Skills, and Contact sections
-- Light/Dark mode
-- GitHub Pages ready
+**Live site:** [talha-bilal.github.io/portfolio](https://talha-bilal.github.io/portfolio/)
 
-### 🧭 Deployment
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Build the site:
-   ```bash
-   npm run build
-   ```
-3. Deploy to GitHub Pages:
-   ```bash
-   npm run deploy
-   ```
+## Stack
 
----
-© 2025 Talha Bilal
+- React 18 + Vite
+- Tailwind CSS
+- Framer Motion
+
+## Local development
+
+```bash
+npm install
+pip install -r requirements-cv.txt   # optional — regenerates resume PDF before build
+npm run dev
+```
+
+## Build & deploy
+
+```bash
+npm run build    # regenerates CV PDF, then builds to dist/
+npm run deploy   # publishes dist/ to gh-pages branch
+```
+
+## Resume PDF
+
+Content lives in `scripts/generate_cv.py`. Regenerate anytime:
+
+```bash
+npm run cv
+```
+
+Output: `public/Talha_Bilal_CV.pdf` (copied into `dist/` on build).
