@@ -1,36 +1,53 @@
 # Talha Bilal — Portfolio
 
-Professional portfolio for **Talha Bilal**, Senior Software Engineer & Technical Team Lead (Java Spring Boot, PKI, Keycloak, Java Card). Built for GitHub Pages.
+Professional portfolio and resume for **Talha Bilal** — Senior Software Engineer & Technical Team Lead (Java Spring Boot, PKI, Keycloak, Java Card).
 
 **Live site:** [talha-bilal.github.io/portfolio](https://talha-bilal.github.io/portfolio/)
+
+## How this repo works
+
+- **`main`** holds source code only (no build artifacts).
+- Pushing to **`main`** triggers [GitHub Actions](.github/workflows/deploy.yml) to build and publish to **`gh-pages`**.
+- All portfolio text lives in one file: [`content/portfolio.json`](content/portfolio.json).
+
+See **[MAINTENANCE.md](MAINTENANCE.md)** for day-to-day updates and GitHub Desktop guidance.
 
 ## Stack
 
 - React 18 + Vite
-- Tailwind CSS
-- Framer Motion
+- Tailwind CSS + Framer Motion
+- Resume PDF via Python ([fpdf2](requirements-cv.txt))
 
 ## Local development
 
 ```bash
 npm install
-pip install -r requirements-cv.txt   # optional — regenerates resume PDF before build
+pip install -r requirements-cv.txt
 npm run dev
 ```
 
-## Build & deploy
+Open http://localhost:5173/portfolio/
 
-```bash
-npm run build    # regenerates CV PDF, then builds to dist/
-npm run deploy   # publishes dist/ to gh-pages branch
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Local preview |
+| `npm run validate` | Check `portfolio.json` structure |
+| `npm run cv` | Regenerate resume PDF only |
+| `npm run build` | Validate, generate CV, build `dist/` |
+| `npm run deploy` | Manual publish (CI is preferred) |
+
+## Project structure
+
+```
+content/portfolio.json    # Profile data (edit this)
+src/                      # React UI
+public/                   # Static assets (favicon; PDF is generated)
+scripts/                  # CV generator and validators
+.github/workflows/        # Auto deploy
 ```
 
-## Resume PDF
+## License
 
-Content lives in `scripts/generate_cv.py`. Regenerate anytime:
-
-```bash
-npm run cv
-```
-
-Output: `public/Talha_Bilal_CV.pdf` (copied into `dist/` on build).
+Personal portfolio — all rights reserved.

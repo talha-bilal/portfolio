@@ -1,1 +1,24 @@
-/node_modules
+# Dependencies
+node_modules/
+
+# Build output (generated on CI and locally; never commit)
+dist/
+
+# Generated resume (built from content/portfolio.json)
+public/*.pdf
+
+# Environment and OS
+.env
+.env.*
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+npm-debug.log*
+*.log

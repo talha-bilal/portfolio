@@ -1,0 +1,3 @@
+* text=auto eol=lf
+*.pdf binary
+package-lock.json linguist-generated=false
