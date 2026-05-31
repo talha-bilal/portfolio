@@ -29,6 +29,19 @@
       radial-gradient(ellipse 60% 40% at 100% 0%, rgba(99, 102, 241, 0.08), transparent);
   }
 
+  .hero-photo {
+    @apply w-full rounded-2xl object-cover object-center shadow-2xl;
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-photo-dark {
+    @apply border border-white/10 ring-2 ring-teal-500/20;
+  }
+
+  .hero-photo-light {
+    @apply border border-slate-200 ring-2 ring-teal-600/15;
+  }
+
   .badge {
     @apply inline-flex items-center rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-xs font-medium text-teal-300;
   }

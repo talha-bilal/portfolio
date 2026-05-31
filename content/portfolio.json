@@ -11,6 +11,7 @@
     "github": "https://github.com/talha-bilal",
     "portfolio": "https://talha-bilal.github.io/portfolio/",
     "cvFile": "Talha_Bilal_CV.pdf",
+    "profileImage": "profile.jpeg",
     "languages": ["English — professional (written & verbal)", "Urdu — native"]
   },
   "summary": "Senior engineer and technical lead with 5+ years shipping secure, enterprise-grade systems in Java Spring Boot, PKI, and identity. Specializes in certificate lifecycle, high-assurance digital signing, CSC (Cloud Signature Consortium) remote signing APIs, HSM integration (AWS CloudHSM, Utimaco, SoftHSM2), end-to-end Keycloak with custom SPIs, and Java Card applets — from regulated remote signing to centralized IAM.",
@@ -286,7 +287,7 @@
       },
       {
         "name": "Signing Platform (full stack)",
-        "detail": "End-to-end platform, deployment topology, cross-service map",
+        "detail": "Signing Portal SPA flows, org RBAC, guest/CSC/embed paths, backend map",
         "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/signing-platform-architecture",
         "icon": "diagram",
         "tech": ["Architecture", "Microservices", "Audit"]

@@ -132,7 +132,8 @@ export default function Portfolio() {
       <main id="top" className="mx-auto max-w-6xl px-5 pb-16">
         {/* Hero */}
         <section className="py-14 md:py-20">
-          <motion.div {...fade}>
+          <motion.div {...fade} className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-start">
+            <div>
             <span className="badge">{site.availability}</span>
             <p className={`mt-5 text-sm font-medium uppercase tracking-widest ${accent}`}>{site.role}</p>
             <h1 className="font-display mt-2 max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl lg:text-6xl">
@@ -197,6 +198,21 @@ export default function Portfolio() {
                 </div>
               ))}
             </dl>
+            </div>
+
+            {site.profileImage && (
+              <div className="mx-auto w-full max-w-[280px] lg:mx-0 lg:max-w-[300px]">
+                <img
+                  src={`${import.meta.env.BASE_URL}${site.profileImage}`}
+                  alt={`Portrait of ${site.name}`}
+                  width={300}
+                  height={375}
+                  className={`hero-photo ${dark ? "hero-photo-dark" : "hero-photo-light"}`}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            )}
           </motion.div>
         </section>
 
