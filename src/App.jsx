@@ -283,7 +283,7 @@ export default function Portfolio() {
         {/* Projects */}
         <section id="projects" className="section-pad">
           <SectionTitle title="Projects" subtitle="Featured production systems" />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2">
             {featuredProjects.map((p) => (
               <ProjectCard key={p.id} project={p} card={`${card} card-featured`} muted={muted} featured />
             ))}

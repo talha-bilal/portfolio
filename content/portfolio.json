@@ -3,7 +3,7 @@
     "name": "Talha Bilal",
     "headline": "Production PKI, digital signing & IAM platforms in Java",
     "role": "Senior Software Engineer & Technical Team Lead",
-    "focus": "PKI · Digital Signing · Keycloak · Java Card · HSM",
+    "focus": "PKI · CSC Remote Signing · Keycloak · Java Card · HSM",
     "location": "Pakistan (UTC+5)",
     "availability": "Available worldwide — full-time & contract",
     "email": "talha.at43@gmail.com",
@@ -13,14 +13,14 @@
     "cvFile": "Talha_Bilal_CV.pdf",
     "languages": ["English — professional (written & verbal)", "Urdu — native"]
   },
-  "summary": "Senior engineer and technical lead with 5+ years shipping secure, enterprise-grade systems in Java Spring Boot, PKI, and identity. Specializes in certificate lifecycle, high-assurance digital signing, HSM integration (AWS CloudHSM, Utimaco, SoftHSM2), end-to-end Keycloak with custom SPIs, and Java Card applets — from regulated signing workflows to centralized IAM.",
+  "summary": "Senior engineer and technical lead with 5+ years shipping secure, enterprise-grade systems in Java Spring Boot, PKI, and identity. Specializes in certificate lifecycle, high-assurance digital signing, CSC (Cloud Signature Consortium) remote signing APIs, HSM integration (AWS CloudHSM, Utimaco, SoftHSM2), end-to-end Keycloak with custom SPIs, and Java Card applets — from regulated remote signing to centralized IAM.",
   "about": {
     "paragraphs": [
-      "I help organizations run trust infrastructure in production: certificate authorities, OCSP/CRL, S/MIME and PDF signing, timestamp authorities, and HSM-backed crypto services.",
+      "I help organizations run trust infrastructure in production: certificate authorities, OCSP/CRL, CSC-based remote signing, S/MIME and PDF signing, timestamp authorities, and HSM-backed crypto services.",
       "As Technical Team Lead at Dictalabs, I combine architecture, hands-on Java development, and code review — working with product and security stakeholders in audit-sensitive environments.",
       "I collaborate effectively with distributed teams: clear written specs, async communication, and overlap with European and Middle Eastern business hours."
     ],
-    "domains": ["Digital signing & e-trust", "PKI / CA operations", "IAM & OIDC", "Smart cards", "Multi-tenant B2B SaaS"]
+    "domains": ["Digital signing & e-trust", "CSC remote signing", "PKI / CA operations", "IAM & OIDC", "Smart cards", "Multi-tenant B2B SaaS"]
   },
   "globalWork": {
     "title": "Working with international teams",
@@ -48,7 +48,7 @@
     { "value": "8+", "label": "Production systems" },
     { "value": "Lead", "label": "PKI & signing squad" }
   ],
-  "compliance": ["Audit-ready signing workflows", "Multi-tenant isolation", "eIDAS-oriented TSA & timestamps", "GDPR-aware IAM design"],
+  "compliance": ["CSC / ETSI remote signing", "Audit-ready signing workflows", "Multi-tenant isolation", "eIDAS-oriented TSA & timestamps", "GDPR-aware IAM design"],
   "skillGroups": [
     {
       "label": "Backend & APIs",
@@ -67,6 +67,8 @@
         "PKI / CA",
         "OCSP / CRL",
         "S/MIME & CMS",
+        "CSC API (remote signing)",
+        "ETSI EN 319 401 / 411",
         "PKCS#11",
         "Keycloak",
         "OAuth 2.0 / OIDC",
@@ -109,6 +111,7 @@
       "bullets": [
         "Lead engineers owning microservices for PKI, CMS/PKCS#7 signing, and HSM-backed key operations across production tenants.",
         "Architected PKCS#11 integration layer (AWS CloudHSM, SoftHSM2) — improved signing stability via pooled sessions, idempotent retries, and operational runbooks.",
+        "Built CSC-compliant remote signing service (credentials, info, signatures, timestamps) with OAuth-secured API access and HSM-backed signature creation for client apps.",
         "Delivered end-to-end Keycloak: multi-realm OIDC, client policies, and custom SPIs (Authenticator, User Storage, Protocol Mapper) for certificate-aware login.",
         "Ship Java Card 3.x applets (RSA/ECDSA on-card) with GlobalPlatform lifecycle and host issuance tooling.",
         "Drive RFC 3161 timestamping, OCSP/CRL hardening, and incident response with security and product leadership."
@@ -140,6 +143,15 @@
       "tech": ["Keycloak", "OIDC", "Java SPI", "Spring Boot", "PKI"]
     },
     {
+      "id": "csc-remote",
+      "title": "CSC remote signing for client applications",
+      "problem": "Partners and internal apps needed standards-based remote signing without embedding HSM logic or managing keys on end-user devices.",
+      "role": "Technical lead — CSC API design, Spring Boot implementation, and HSM integration.",
+      "approach": "Implemented Cloud Signature Consortium API flows (service info, credentials list, authorize, signHash, timestamps); secured endpoints with OAuth/OIDC; routed signature operations to PKCS#11/HSM with audit logging per tenant.",
+      "outcome": "Interoperable remote signing for web and mobile clients, reduced custom integration effort, and a single audited path from CSC requests to HSM-backed signatures.",
+      "tech": ["CSC API", "Java", "Spring Boot", "OAuth 2.0", "PKCS#11", "HSM"]
+    },
+    {
       "id": "hsm-signing",
       "title": "HSM signing platform at scale",
       "problem": "Signing microservices faced intermittent PKCS#11 failures and latency spikes under concurrent enterprise workloads.",
@@ -158,6 +170,15 @@
       "desc": "Realm architecture, OIDC clients, and custom SPI providers (Authenticator, User Storage, Protocol Mapper) for PKI-backed and standard OIDC login.",
       "tech": ["Keycloak", "OAuth 2.0", "OIDC", "Java SPI", "Spring Boot"],
       "cvLine": "Keycloak IAM - OIDC realms, certificate-aware SPIs, multi-tenant auth"
+    },
+    {
+      "id": "csc",
+      "featured": true,
+      "name": "CSC Remote Signing Service",
+      "impact": "Standards-based remote signing for apps & integrators",
+      "desc": "Cloud Signature Consortium API implementation: credential discovery, authorization, remote signature creation, and timestamps — OAuth-protected and backed by enterprise HSMs.",
+      "tech": ["CSC API", "Java", "Spring Boot", "OAuth 2.0", "PKCS#11", "HSM"],
+      "cvLine": "CSC Remote Signing - credentials, signHash, OAuth, HSM-backed signatures"
     },
     {
       "id": "pki-server",
@@ -258,13 +279,13 @@
     { "id": "contact", "label": "Contact" }
   ],
   "cv": {
-    "tagline": "Java | Spring Boot | PKI | Keycloak SPI | Java Card | HSM",
+    "tagline": "Java | Spring Boot | PKI | CSC Remote Signing | Keycloak SPI | HSM",
     "contactLines": [
       "talha.at43@gmail.com",
       "linkedin.com/in/talha-bilal-a74477154",
       "github.com/talha-bilal",
       "talha-bilal.github.io/portfolio"
     ],
-    "summaryShort": "Senior Java engineer & team lead — 5+ years in PKI, digital signing, Keycloak (custom SPI), Java Card, and HSM platforms. Delivers production microservices for regulated, multi-tenant environments."
+    "summaryShort": "Senior Java engineer & team lead — 5+ years in PKI, CSC remote signing, Keycloak (custom SPI), Java Card, and HSM platforms. Delivers production microservices for regulated, multi-tenant environments."
   }
 }
