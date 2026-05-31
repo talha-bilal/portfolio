@@ -62,6 +62,10 @@ In the repo on GitHub: **Settings → Pages**
 - CV project lines: use each project’s `cvLine` field in `portfolio.json`.
 - Avoid special Unicode in CV-facing strings when possible (PDF uses Latin-1 fonts).
 
+## Engineering samples (separate repo)
+
+Public demos live in **[trust-platform-samples](https://github.com/talha-bilal/trust-platform-samples)** — edit and push there; portfolio links to that repo automatically via `openSource` in `portfolio.json`.
+
 ## File map
 
 ```

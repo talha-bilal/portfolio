@@ -246,7 +246,7 @@
   ],
   "openSource": {
     "title": "Public engineering samples",
-    "repo": "https://github.com/talha-bilal/portfolio/tree/main/samples",
+    "repo": "https://github.com/talha-bilal/trust-platform-samples",
     "items": [
       {
         "name": "Keycloak PKI Authenticator SPI",
@@ -275,8 +275,8 @@
       },
       {
         "label": "GitHub samples",
-        "detail": "Keycloak SPI, CSC OpenAPI, architecture — in portfolio repo",
-        "url": "https://github.com/talha-bilal/portfolio/tree/main/samples"
+        "detail": "trust-platform-samples — Keycloak SPI, CSC OpenAPI, architecture",
+        "url": "https://github.com/talha-bilal/trust-platform-samples"
       },
       {
         "label": "GitHub profile",
