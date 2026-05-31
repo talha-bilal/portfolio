@@ -282,6 +282,20 @@
         "path": "docs/use-cases",
         "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/docs/use-cases",
         "icon": "api"
+      },
+      {
+        "name": "Java Card lifecycle diagram",
+        "detail": "GlobalPlatform, APDU, on-card keys, issuance and signing ceremonies",
+        "path": "docs/diagrams/07-java-card-applet-lifecycle.md",
+        "url": "https://github.com/talha-bilal/trust-platform-samples/blob/main/docs/diagrams/07-java-card-applet-lifecycle.md",
+        "icon": "diagram"
+      },
+      {
+        "name": "CSC Spring mock server",
+        "detail": "Runnable Spring Boot API — OAuth, authorize, signHash on localhost:8081",
+        "path": "csc-mock-server",
+        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/csc-mock-server",
+        "icon": "api"
       }
     ]
   },
