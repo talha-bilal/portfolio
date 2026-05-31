@@ -1,21 +1,65 @@
 {
   "site": {
     "name": "Talha Bilal",
+    "headline": "Production PKI, digital signing & IAM platforms in Java",
     "role": "Senior Software Engineer & Technical Team Lead",
-    "focus": "Java · Spring Boot · PKI · Keycloak · Java Card",
+    "focus": "PKI · Digital Signing · Keycloak · Java Card · HSM",
     "location": "Pakistan (UTC+5)",
-    "availability": "Open to full-time & contract opportunities",
+    "availability": "Available worldwide — full-time & contract",
     "email": "talha.at43@gmail.com",
     "linkedin": "https://www.linkedin.com/in/talha-bilal-a74477154",
     "github": "https://github.com/talha-bilal",
     "portfolio": "https://talha-bilal.github.io/portfolio/",
-    "cvFile": "Talha_Bilal_CV.pdf"
+    "cvFile": "Talha_Bilal_CV.pdf",
+    "languages": ["English — professional (written & verbal)", "Urdu — native"]
   },
-  "summary": "Senior engineer and technical lead with 4+ years building secure, enterprise-grade platforms on Java Spring Boot, Public Key Infrastructure, and identity systems. Designs microservices for certificate lifecycle, digital signing, and HSM integration (AWS CloudHSM, Utimaco, SoftHSM2). Experienced in end-to-end Keycloak deployments with custom SPI development, Java Card applet design, Spring Security, REST/OpenAPI, Bouncy Castle, and PKCS#11 — from smart-card edge crypto to centralized IAM.",
+  "summary": "Senior engineer and technical lead with 5+ years shipping secure, enterprise-grade systems in Java Spring Boot, PKI, and identity. Specializes in certificate lifecycle, high-assurance digital signing, HSM integration (AWS CloudHSM, Utimaco, SoftHSM2), end-to-end Keycloak with custom SPIs, and Java Card applets — from regulated signing workflows to centralized IAM.",
+  "about": {
+    "paragraphs": [
+      "I help organizations run trust infrastructure in production: certificate authorities, OCSP/CRL, S/MIME and PDF signing, timestamp authorities, and HSM-backed crypto services.",
+      "As Technical Team Lead at Dictalabs, I combine architecture, hands-on Java development, and code review — working with product and security stakeholders in audit-sensitive environments.",
+      "I collaborate effectively with distributed teams: clear written specs, async communication, and overlap with European and Middle Eastern business hours."
+    ],
+    "domains": ["Digital signing & e-trust", "PKI / CA operations", "IAM & OIDC", "Smart cards", "Multi-tenant B2B SaaS"]
+  },
+  "globalWork": {
+    "title": "Working with international teams",
+    "items": [
+      {
+        "label": "Time zone",
+        "detail": "Based in UTC+5 with 4–6 hours overlap with CET/GMT and flexible sync for US East"
+      },
+      {
+        "label": "Communication",
+        "detail": "Professional English — documentation, design notes, incident reports, and stakeholder calls"
+      },
+      {
+        "label": "Delivery style",
+        "detail": "Remote-friendly rituals: written RFCs, PR-based review, CI-gated releases, and on-call runbooks"
+      },
+      {
+        "label": "Engagement",
+        "detail": "Open to employer-of-record, direct contract, or full-time remote with transparent availability"
+      }
+    ]
+  },
+  "highlights": [
+    { "value": "5+", "label": "Years experience" },
+    { "value": "8+", "label": "Production systems" },
+    { "value": "Lead", "label": "PKI & signing squad" }
+  ],
+  "compliance": ["Audit-ready signing workflows", "Multi-tenant isolation", "eIDAS-oriented TSA & timestamps", "GDPR-aware IAM design"],
   "skillGroups": [
     {
       "label": "Backend & APIs",
-      "items": ["Java 21/17", "Spring Boot", "Spring Security", "AOP", "REST", "OpenAPI", "Microservices"]
+      "items": [
+        "Java 21/17",
+        "Spring Boot",
+        "Spring Security",
+        "REST / OpenAPI",
+        "Microservices",
+        "Event-driven (RabbitMQ)"
+      ]
     },
     {
       "label": "Security, PKI & IAM",
@@ -26,7 +70,7 @@
         "PKCS#11",
         "Keycloak",
         "OAuth 2.0 / OIDC",
-        "Keycloak SPI",
+        "Keycloak SPI (Authenticator, User Storage, Protocol Mapper)",
         "Bouncy Castle",
         "IAIK",
         "RFC 3161 TSA"
@@ -34,97 +78,172 @@
     },
     {
       "label": "Java Card & HSM",
-      "items": ["Java Card", "Smart Card Applets", "GlobalPlatform", "APDU", "AWS CloudHSM", "Utimaco", "SoftHSM2"]
+      "items": [
+        "Java Card 3.x",
+        "GlobalPlatform 2.x",
+        "APDU / host tools",
+        "AWS CloudHSM",
+        "Utimaco",
+        "SoftHSM2"
+      ]
     },
     {
-      "label": "Infrastructure",
-      "items": ["Docker", "Jenkins", "RabbitMQ", "Redis", "PostgreSQL", "MySQL", "Gradle", "Maven", "Git"]
+      "label": "Platform & quality",
+      "items": [
+        "Docker",
+        "CI/CD (Jenkins, GitHub Actions)",
+        "PostgreSQL / MySQL",
+        "Redis",
+        "Integration & API testing",
+        "Structured logging & production support"
+      ]
     }
-  ],
-  "highlights": [
-    { "value": "4+", "label": "Years experience" },
-    { "value": "8+", "label": "Production systems" },
-    { "value": "2", "label": "Companies — lead & senior IC" }
   ],
   "experience": [
     {
       "company": "Dictalabs",
+      "industry": "Enterprise digital trust & signing (B2B PKI platform)",
       "title": "Technical Team Lead — Java Spring Boot & PKI",
       "period": "Aug 2024 – Present",
-      "location": "Pakistan",
+      "location": "Pakistan · distributed team",
       "bullets": [
-        "Lead engineers delivering microservices-based PKI, signing, and cryptographic platforms.",
-        "Architect HSM-integrated services for key management, digital signatures, and RFC 3161 timestamping.",
-        "Own PKCS#11 integrations across AWS CloudHSM and SoftHSM2; improve signing workflow reliability and latency.",
-        "Led complete Keycloak integration: realms, clients, flows, and custom SPI providers for auth and platform-specific behavior.",
-        "Develop Java Card applets for secure on-card operations (keys, signing primitives, and card-managed credentials).",
-        "Partner with product and security stakeholders on roadmap, code review, and production incident response."
+        "Lead engineers owning microservices for PKI, CMS/PKCS#7 signing, and HSM-backed key operations across production tenants.",
+        "Architected PKCS#11 integration layer (AWS CloudHSM, SoftHSM2) — improved signing stability via pooled sessions, idempotent retries, and operational runbooks.",
+        "Delivered end-to-end Keycloak: multi-realm OIDC, client policies, and custom SPIs (Authenticator, User Storage, Protocol Mapper) for certificate-aware login.",
+        "Ship Java Card 3.x applets (RSA/ECDSA on-card) with GlobalPlatform lifecycle and host issuance tooling.",
+        "Drive RFC 3161 timestamping, OCSP/CRL hardening, and incident response with security and product leadership."
       ]
     },
     {
       "company": "Codegic",
+      "industry": "PKI & secure document/signing products",
       "title": "Senior Software Engineer — Java Spring Boot & PKI",
       "period": "Aug 2021 – Jul 2024",
       "location": "Pakistan",
       "bullets": [
-        "Built PKI infrastructure: certificate authority, OCSP/CRL responders, and full lifecycle management.",
-        "Developed S/MIME/CMS email signing and Crypto-Core microservices integrated with enterprise HSMs.",
-        "Integrated Bouncy Castle and IAIK with Spring Boot; established CI/CD, containers, and performance tuning.",
-        "Implemented Java Card applets and host applications for smart-card issuance and secure crypto workflows.",
-        "Delivered multi-tenant signing services with audit trails and compliance-oriented workflows."
+        "Built production CA stack: issuance, renewal, OCSP/CRL responders, and tenant-scoped certificate policies.",
+        "Developed S/MIME/CMS email signing and Crypto-Core services integrated with enterprise HSMs and audit trails.",
+        "Implemented Java Card applets and PC/SC host applications for smart-card issuance and secure key ceremonies.",
+        "Established Docker-based CI/CD, API regression suites, and performance tuning for high-volume signing paths.",
+        "Delivered multi-tenant PDF/signing workflows with approval chains and compliance-oriented logging."
       ]
+    }
+  ],
+  "caseStudies": [
+    {
+      "id": "keycloak-pki",
+      "title": "Keycloak IAM with PKI-backed authentication",
+      "problem": "Platform needed centralized SSO/OIDC while honoring existing certificate-based credentials and tenant-specific login policies.",
+      "role": "Technical lead — architecture, custom SPI development, and Spring Boot service integration.",
+      "approach": "Designed realms and clients per tenant; implemented Authenticator and User Storage SPIs to map X.509/certificate identities to Keycloak sessions; extended Protocol Mapper for claims required by signing microservices.",
+      "outcome": "Single IAM layer for admin and customer apps, reduced bespoke auth code in services, and auditable login flows aligned with PKI issuance.",
+      "tech": ["Keycloak", "OIDC", "Java SPI", "Spring Boot", "PKI"]
+    },
+    {
+      "id": "hsm-signing",
+      "title": "HSM signing platform at scale",
+      "problem": "Signing microservices faced intermittent PKCS#11 failures and latency spikes under concurrent enterprise workloads.",
+      "role": "Senior/lead engineer — PKCS#11 service design and production hardening.",
+      "approach": "Introduced REST PKCS#11 abstraction with session pooling, structured error taxonomy, Redis-backed coordination where needed, and metrics-friendly logging for on-call.",
+      "outcome": "More predictable signing paths for PDF, email, and timestamp services; faster incident diagnosis and fewer customer-impacting outages.",
+      "tech": ["Java", "PKCS#11", "AWS CloudHSM", "Spring Boot", "Redis"]
     }
   ],
   "projects": [
     {
+      "id": "keycloak",
+      "featured": true,
       "name": "Keycloak IAM Integration",
-      "desc": "End-to-end Keycloak rollout: realm design, OIDC/OAuth clients, identity brokering, and custom SPI providers for authentication, user storage, and protocol extension tailored to PKI-backed login.",
-      "tech": ["Keycloak", "OAuth 2.0", "OIDC", "Java", "Custom SPI", "Spring Boot"],
-      "cvLine": "Keycloak IAM Integration - realms, OIDC clients, custom SPI providers"
+      "impact": "Production IAM for multi-tenant signing platform",
+      "desc": "Realm architecture, OIDC clients, and custom SPI providers (Authenticator, User Storage, Protocol Mapper) for PKI-backed and standard OIDC login.",
+      "tech": ["Keycloak", "OAuth 2.0", "OIDC", "Java SPI", "Spring Boot"],
+      "cvLine": "Keycloak IAM - OIDC realms, certificate-aware SPIs, multi-tenant auth"
     },
     {
-      "name": "Java Card Applets",
-      "desc": "Secure Java Card applet suite for credential storage, cryptographic operations, and card-resident key usage — integrated with host tools and issuance pipelines via GlobalPlatform lifecycle.",
-      "tech": ["Java Card", "GlobalPlatform", "APDU", "Smart Cards", "PKI"],
-      "cvLine": "Java Card Applets - secure on-card crypto and credential operations"
-    },
-    {
+      "id": "pki-server",
+      "featured": true,
       "name": "PKI Server",
-      "desc": "End-to-end CA and certificate lifecycle platform with OCSP/CRL, HSM-backed keys, multi-tenant policies, and automated renewal.",
+      "impact": "Core CA & lifecycle engine for enterprise tenants",
+      "desc": "Certificate authority with OCSP/CRL, HSM-backed keys, automated renewal, and policy-driven issuance.",
       "tech": ["Java", "Spring Boot", "PKCS#11", "PostgreSQL", "HSM"],
-      "cvLine": "PKI Server - CA lifecycle, OCSP/CRL, HSM-backed issuance"
+      "cvLine": "PKI Server - CA, OCSP/CRL, HSM-backed multi-tenant issuance"
     },
     {
+      "id": "pkcs11",
+      "featured": true,
+      "name": "PKCS#11 Service",
+      "impact": "Unified HSM API for all signing products",
+      "desc": "REST layer over AWS CloudHSM, Utimaco, and SoftHSM2 with RBAC, session management, and operational guardrails.",
+      "tech": ["PKCS#11", "HSM", "Spring Boot", "Docker"],
+      "cvLine": "PKCS#11 Service - pooled HSM sessions, multi-vendor support"
+    },
+    {
+      "id": "javacard",
+      "featured": false,
+      "name": "Java Card Applets",
+      "impact": "On-card keys for issuance and signing ceremonies",
+      "desc": "Java Card 3.x applets with GlobalPlatform 2.x lifecycle; RSA/ECDSA on-card ops and APDU integration with host tools.",
+      "tech": ["Java Card", "GlobalPlatform", "APDU", "PKI"],
+      "cvLine": "Java Card - GP 2.x lifecycle, RSA/ECDSA applets, host integration"
+    },
+    {
+      "id": "email-sign",
+      "featured": false,
       "name": "Secure Email Signing",
-      "desc": "S/MIME and CMS signing and verification with RSA/ECDSA, smart certificate selection, and enterprise mail integration.",
-      "tech": ["Java", "Spring Boot", "Bouncy Castle", "S/MIME"],
-      "cvLine": "Secure Email Signing - S/MIME/CMS with RSA and ECDSA"
+      "impact": "Enterprise S/MIME at scale",
+      "desc": "CMS signing and verification with algorithm agility (RSA/ECDSA) and automated certificate selection.",
+      "tech": ["Java", "Bouncy Castle", "S/MIME", "Spring Boot"],
+      "cvLine": "Secure Email Signing - S/MIME/CMS, RSA & ECDSA"
     },
     {
+      "id": "workflow",
+      "featured": false,
       "name": "Workflow Management",
-      "desc": "PDF signing and multi-level approvals with certificate auth, timestamping, and compliance audit trails.",
+      "impact": "Compliance-ready document signing",
+      "desc": "PDF signing, multi-level approvals, certificate-based auth, and timestamped audit trails.",
       "tech": ["Spring Boot", "PDF Signing", "PKI", "Timestamping"],
       "cvLine": "Workflow Management - PDF signing, approvals, audit trails"
     },
     {
+      "id": "tsa",
+      "featured": false,
       "name": "Timestamp Authority (TSA)",
-      "desc": "RFC 3161 compliant timestamp service for legal and operational signing artifacts.",
+      "impact": "Legally verifiable timestamps",
+      "desc": "RFC 3161 TSA integrated with signing pipelines and long-term validation workflows.",
       "tech": ["Java", "RFC 3161", "Bouncy Castle"],
       "cvLine": "Timestamp Authority - RFC 3161 compliant TSA"
     },
     {
-      "name": "PKCS#11 Service",
-      "desc": "REST abstraction over HSMs (AWS CloudHSM, Utimaco, SoftHSM2) with session management and RBAC for signing apps.",
-      "tech": ["PKCS#11", "HSM", "Spring Boot"],
-      "cvLine": "PKCS#11 Service - REST layer for enterprise HSMs"
-    },
-    {
+      "id": "crypto-core",
+      "featured": false,
       "name": "Crypto-Core",
-      "desc": "Central crypto microservice: key generation, CSR signing, encrypt/decrypt, and tenant-isolated key handling.",
+      "impact": "Shared crypto microservice",
+      "desc": "Key generation, CSR processing, encrypt/decrypt, and tenant-isolated material for upstream apps.",
       "tech": ["Java", "Spring Boot", "Bouncy Castle", "IAIK"],
-      "cvLine": "Crypto-Core - key generation, CSR signing, tenant isolation"
+      "cvLine": "Crypto-Core - CSR, key ops, tenant isolation"
     }
   ],
+  "proof": {
+    "title": "Proof & references",
+    "items": [
+      {
+        "label": "LinkedIn",
+        "detail": "Recommendations, career history, and featured projects",
+        "url": "https://www.linkedin.com/in/talha-bilal-a74477154"
+      },
+      {
+        "label": "GitHub",
+        "detail": "Engineering profile, contributions, and technical samples",
+        "url": "https://github.com/talha-bilal"
+      },
+      {
+        "label": "Resume PDF",
+        "detail": "One-page overview for recruiters and ATS",
+        "url": "Talha_Bilal_CV.pdf",
+        "internal": true
+      }
+    ]
+  },
   "education": {
     "degree": "B.S. Computer Science",
     "school": "KFUEIT",
@@ -132,18 +251,20 @@
   },
   "nav": [
     { "id": "about", "label": "About" },
+    { "id": "case-studies", "label": "Case studies" },
     { "id": "experience", "label": "Experience" },
     { "id": "projects", "label": "Projects" },
     { "id": "skills", "label": "Skills" },
     { "id": "contact", "label": "Contact" }
   ],
   "cv": {
-    "tagline": "Java | Spring Boot | PKI | Keycloak | Java Card | Cryptography",
+    "tagline": "Java | Spring Boot | PKI | Keycloak SPI | Java Card | HSM",
     "contactLines": [
       "talha.at43@gmail.com",
       "linkedin.com/in/talha-bilal-a74477154",
       "github.com/talha-bilal",
       "talha-bilal.github.io/portfolio"
-    ]
+    ],
+    "summaryShort": "Senior Java engineer & team lead — 5+ years in PKI, digital signing, Keycloak (custom SPI), Java Card, and HSM platforms. Delivers production microservices for regulated, multi-tenant environments."
   }
 }

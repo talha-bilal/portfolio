@@ -6,7 +6,21 @@ const root = dirname(fileURLToPath(import.meta.url));
 const path = join(root, "..", "content", "portfolio.json");
 const data = JSON.parse(readFileSync(path, "utf8"));
 
-const required = ["site", "summary", "skillGroups", "experience", "projects", "education", "nav", "cv"];
+const required = [
+  "site",
+  "summary",
+  "about",
+  "globalWork",
+  "skillGroups",
+  "experience",
+  "caseStudies",
+  "projects",
+  "proof",
+  "education",
+  "nav",
+  "cv",
+  "compliance",
+];
 
 for (const key of required) {
   if (!(key in data)) {
@@ -15,8 +29,14 @@ for (const key of required) {
   }
 }
 
-if (!data.site.email?.includes("@")) {
-  console.error("site.email looks invalid");
+if (!data.site.headline || !data.site.email?.includes("@")) {
+  console.error("site.headline or site.email invalid");
+  process.exit(1);
+}
+
+const featured = data.projects.filter((p) => p.featured);
+if (featured.length < 1) {
+  console.error("At least one featured project required");
   process.exit(1);
 }
 

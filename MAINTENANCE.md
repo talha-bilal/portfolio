@@ -11,7 +11,7 @@ This repo is set up so you only edit **content**, push to `main`, and GitHub Act
 
 ## Update your portfolio (3 steps)
 
-1. Edit **`content/portfolio.json`** — name, summary, jobs, projects, skills.
+1. Edit **`content/portfolio.json`** — headline, summary, case studies, jobs, projects, skills, global work.
 2. Preview locally:
    ```bash
    npm install

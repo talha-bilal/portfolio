@@ -13,7 +13,6 @@ OUT = ROOT / "public" / "Talha_Bilal_CV.pdf"
 
 
 def ascii_safe(text: str) -> str:
-    """FPDF core fonts are Latin-1; normalize common Unicode punctuation."""
     replacements = {
         "\u2013": "-",
         "\u2014": "-",
@@ -41,6 +40,8 @@ class CV(FPDF):
     def header_block(self, data: dict):
         site = data["site"]
         cv = data["cv"]
+        summary_text = cv.get("summaryShort") or data["summary"]
+
         self.set_font("Helvetica", "B", 18)
         self.cell(0, 9, ascii_safe(site["name"]), new_x="LMARGIN", new_y="NEXT")
         self.set_font("Helvetica", "", 11)
@@ -53,6 +54,9 @@ class CV(FPDF):
         self.set_font("Helvetica", "", 9)
         for line in cv["contactLines"]:
             self.cell(0, 5, ascii_safe(line), new_x="LMARGIN", new_y="NEXT")
+        self.ln(2)
+        self.set_font("Helvetica", "", 9)
+        self.multi_cell(0, 4, ascii_safe(summary_text))
         self.ln(3)
 
     def section(self, title: str):
@@ -84,9 +88,6 @@ def main():
     pdf.add_page()
     pdf.header_block(data)
 
-    pdf.section("PROFESSIONAL SUMMARY")
-    pdf.body_text(data["summary"])
-
     pdf.section("CORE SKILLS")
     pdf.body_text(skills_line(data))
 
@@ -97,14 +98,24 @@ def main():
         pdf.cell(0, 5, ascii_safe(heading), new_x="LMARGIN", new_y="NEXT")
         pdf.set_font("Helvetica", "I", 9)
         pdf.set_text_color(80, 80, 80)
-        pdf.cell(0, 5, ascii_safe(job["period"]), new_x="LMARGIN", new_y="NEXT")
+        industry = job.get("industry", "")
+        period_line = f"{job['period']}" + (f" | {industry}" if industry else "")
+        pdf.cell(0, 5, ascii_safe(period_line), new_x="LMARGIN", new_y="NEXT")
         pdf.set_text_color(0, 0, 0)
         pdf.bullets(job["bullets"])
         pdf.ln(1)
 
     pdf.section("SELECTED PROJECTS")
-    project_lines = [p.get("cvLine") or p["name"] for p in data["projects"]]
-    pdf.bullets(project_lines)
+    featured = [p for p in data["projects"] if p.get("featured")]
+    rest = [p for p in data["projects"] if not p.get("featured")]
+    lines = [p.get("cvLine") or p["name"] for p in featured + rest[:3]]
+    pdf.bullets(lines)
+
+    if data.get("caseStudies"):
+        pdf.section("HIGHLIGHTS")
+        for cs in data["caseStudies"][:2]:
+            line = f"{cs['title']}: {cs['outcome']}"
+            pdf.bullets([line])
 
     pdf.section("EDUCATION")
     pdf.body_text(f"{edu['degree']} - {edu['school']}, {edu['year']}")
