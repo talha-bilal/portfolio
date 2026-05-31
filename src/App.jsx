@@ -249,7 +249,7 @@ export default function Portfolio() {
 
           <motion.div {...fade} className="mt-8">
             <h3 className="font-display mb-4 text-lg font-semibold">{openSource.title}</h3>
-            <LinkCardGrid className="lg:grid-cols-3">
+            <LinkCardGrid>
               {openSource.items.map((sample) => (
                 <LinkCard
                   key={sample.name}
