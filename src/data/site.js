@@ -10,6 +10,7 @@ export const compliance = portfolio.compliance;
 export const experience = portfolio.experience;
 export const caseStudies = portfolio.caseStudies;
 export const projects = portfolio.projects;
+export const openSource = portfolio.openSource;
 export const proof = portfolio.proof;
 export const education = portfolio.education;
 export const nav = portfolio.nav;

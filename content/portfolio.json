@@ -244,6 +244,27 @@
       "cvLine": "Crypto-Core - CSR, key ops, tenant isolation"
     }
   ],
+  "openSource": {
+    "title": "Public engineering samples",
+    "repo": "https://github.com/talha-bilal/portfolio/tree/main/samples",
+    "items": [
+      {
+        "name": "Keycloak PKI Authenticator SPI",
+        "detail": "Authenticator SPI sample for certificate-subject gate (Maven, Keycloak 24)",
+        "path": "keycloak-pki-authenticator"
+      },
+      {
+        "name": "CSC Remote Signing OpenAPI",
+        "detail": "OpenAPI 3 spec for CSC-style credentials, authorize, and signHash flows",
+        "path": "csc-remote-signing-openapi"
+      },
+      {
+        "name": "Signing platform architecture",
+        "detail": "Reference diagrams: PKI, CSC, HSM, Keycloak, and audit paths",
+        "path": "signing-platform-architecture"
+      }
+    ]
+  },
   "proof": {
     "title": "Proof & references",
     "items": [
@@ -253,8 +274,13 @@
         "url": "https://www.linkedin.com/in/talha-bilal-a74477154"
       },
       {
-        "label": "GitHub",
-        "detail": "Engineering profile, contributions, and technical samples",
+        "label": "GitHub samples",
+        "detail": "Keycloak SPI, CSC OpenAPI, architecture — in portfolio repo",
+        "url": "https://github.com/talha-bilal/portfolio/tree/main/samples"
+      },
+      {
+        "label": "GitHub profile",
+        "detail": "All repositories and activity",
         "url": "https://github.com/talha-bilal"
       },
       {

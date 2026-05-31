@@ -15,6 +15,7 @@ const required = [
   "experience",
   "caseStudies",
   "projects",
+  "openSource",
   "proof",
   "education",
   "nav",

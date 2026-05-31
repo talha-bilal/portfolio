@@ -11,6 +11,7 @@ import {
   experience,
   caseStudies,
   projects,
+  openSource,
   proof,
   education,
   nav,
@@ -200,6 +201,30 @@ export default function Portfolio() {
                 </div>
               ))}
             </dl>
+          </motion.div>
+
+          <motion.div {...fade} className={`${card} mt-4 p-6`}>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h3 className="font-display text-lg font-semibold">{openSource.title}</h3>
+              <a href={openSource.repo} className={`text-sm ${accent} hover:underline`} target="_blank" rel="noreferrer">
+                View repository <ExternalIcon />
+              </a>
+            </div>
+            <ul className="mt-4 space-y-4">
+              {openSource.items.map((sample) => (
+                <li key={sample.name} className={`text-sm ${body}`}>
+                  <a
+                    href={`${openSource.repo}/tree/main/${sample.path}`}
+                    className="font-medium text-slate-100 hover:text-teal-400"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {sample.name}
+                  </a>
+                  <p className={`mt-1 ${muted}`}>{sample.detail}</p>
+                </li>
+              ))}
+            </ul>
           </motion.div>
 
           <motion.div {...fade} className={`${card} mt-4 p-6`}>
