@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { LinkCard, LinkCardGrid } from "./components/LinkCards";
 import {
   site,
   summary,
@@ -147,19 +148,45 @@ export default function Portfolio() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href={`mailto:${site.email}?subject=Engineering%20opportunity`} className="btn-primary">
+            <div className="hero-actions mt-8">
+              <motion.a
+                href={`mailto:${site.email}?subject=Engineering%20opportunity`}
+                className="btn-primary btn-motion"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 Get in touch
-              </a>
-              <a href={cvUrl} className="btn-secondary" target="_blank" rel="noreferrer">
+              </motion.a>
+              <motion.a
+                href={cvUrl}
+                className="btn-secondary btn-motion"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 Download resume
-              </a>
-              <a href={site.linkedin} className="btn-secondary" target="_blank" rel="noreferrer">
+              </motion.a>
+              <motion.a
+                href={site.linkedin}
+                className="btn-secondary btn-motion"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 LinkedIn <ExternalIcon />
-              </a>
-              <a href={site.github} className="btn-secondary" target="_blank" rel="noreferrer">
-                GitHub <ExternalIcon />
-              </a>
+              </motion.a>
+              <motion.a
+                href={openSource.repo}
+                className="btn-secondary btn-motion"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Code samples <ExternalIcon />
+              </motion.a>
             </div>
 
             <dl className="mt-12 grid max-w-2xl grid-cols-3 gap-4">
@@ -203,50 +230,47 @@ export default function Portfolio() {
             </dl>
           </motion.div>
 
-          <motion.div {...fade} className={`${card} mt-4 p-6`}>
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <h3 className="font-display text-lg font-semibold">{openSource.title}</h3>
-              <a href={openSource.repo} className={`text-sm ${accent} hover:underline`} target="_blank" rel="noreferrer">
-                View repository <ExternalIcon />
-              </a>
-            </div>
-            <ul className="mt-4 space-y-4">
-              {openSource.items.map((sample) => (
-                <li key={sample.name} className={`text-sm ${body}`}>
-                  <a
-                    href={`${openSource.repo}/tree/main/${sample.path}`}
-                    className="font-medium text-slate-100 hover:text-teal-400"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {sample.name}
-                  </a>
-                  <p className={`mt-1 ${muted}`}>{sample.detail}</p>
-                </li>
+          <motion.div {...fade} className="mt-6">
+            <h3 className="font-display mb-4 text-lg font-semibold">{proof.title}</h3>
+            <LinkCardGrid>
+              {proof.items.map((item) => (
+                <LinkCard
+                  key={item.label}
+                  href={item.internal ? cvUrl : item.url}
+                  title={item.label}
+                  description={item.detail}
+                  icon={item.icon}
+                  cta={item.cta || "Open"}
+                  variant={item.icon === "repo" ? "primary" : "default"}
+                />
               ))}
-            </ul>
+            </LinkCardGrid>
           </motion.div>
 
-          <motion.div {...fade} className={`${card} mt-4 p-6`}>
-            <h3 className="font-display text-lg font-semibold">{proof.title}</h3>
-            <ul className="mt-4 space-y-3">
-              {proof.items.map((item) => (
-                <li key={item.label} className="flex flex-wrap items-baseline justify-between gap-2 text-sm">
-                  <span className={body}>
-                    <strong className="text-slate-200">{item.label}</strong> — {item.detail}
-                  </span>
-                  {item.internal ? (
-                    <a href={cvUrl} className={`shrink-0 ${accent} hover:underline`} target="_blank" rel="noreferrer">
-                      Open PDF
-                    </a>
-                  ) : (
-                    <a href={item.url} className={`shrink-0 ${accent} hover:underline`} target="_blank" rel="noreferrer">
-                      View <ExternalIcon />
-                    </a>
-                  )}
-                </li>
+          <motion.div {...fade} className="mt-8">
+            <h3 className="font-display mb-4 text-lg font-semibold">{openSource.title}</h3>
+            <LinkCardGrid className="lg:grid-cols-3">
+              {openSource.items.map((sample) => (
+                <LinkCard
+                  key={sample.name}
+                  href={sample.url || `${openSource.repo}/tree/main/${sample.path}`}
+                  title={sample.name}
+                  description={sample.detail}
+                  icon={sample.icon || "repo"}
+                  cta="View sample"
+                />
               ))}
-            </ul>
+            </LinkCardGrid>
+            <motion.a
+              href={openSource.repo}
+              className="btn-primary btn-motion mt-4 inline-flex"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Browse full repository <ExternalIcon />
+            </motion.a>
           </motion.div>
         </section>
 
@@ -365,16 +389,35 @@ export default function Portfolio() {
               I reply within 1–2 business days.
             </p>
             <p className={`mx-auto mt-2 text-xs ${muted}`}>{site.location}</p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <a href={`mailto:${site.email}?subject=Engineering%20opportunity`} className="btn-primary">
+            <div className="hero-actions mt-6 justify-center">
+              <motion.a
+                href={`mailto:${site.email}?subject=Engineering%20opportunity`}
+                className="btn-primary btn-motion"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 {site.email}
-              </a>
-              <a href={site.linkedin} className="btn-secondary" target="_blank" rel="noreferrer">
+              </motion.a>
+              <motion.a
+                href={site.linkedin}
+                className="btn-secondary btn-motion"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 LinkedIn
-              </a>
-              <a href={cvUrl} className="btn-secondary" target="_blank" rel="noreferrer">
+              </motion.a>
+              <motion.a
+                href={cvUrl}
+                className="btn-secondary btn-motion"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 Resume
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         </section>

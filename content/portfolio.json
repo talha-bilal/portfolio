@@ -251,43 +251,57 @@
       {
         "name": "Keycloak PKI Authenticator SPI",
         "detail": "Authenticator SPI sample for certificate-subject gate (Maven, Keycloak 24)",
-        "path": "keycloak-pki-authenticator"
+        "path": "keycloak-pki-authenticator",
+        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/keycloak-pki-authenticator",
+        "icon": "keycloak"
       },
       {
         "name": "CSC Remote Signing OpenAPI",
         "detail": "OpenAPI 3 spec for CSC-style credentials, authorize, and signHash flows",
-        "path": "csc-remote-signing-openapi"
+        "path": "csc-remote-signing-openapi",
+        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/csc-remote-signing-openapi",
+        "icon": "api"
       },
       {
         "name": "Signing platform architecture",
         "detail": "Reference diagrams: PKI, CSC, HSM, Keycloak, and audit paths",
-        "path": "signing-platform-architecture"
+        "path": "signing-platform-architecture",
+        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/signing-platform-architecture",
+        "icon": "diagram"
       }
     ]
   },
   "proof": {
-    "title": "Proof & references",
+    "title": "Connect & verify",
     "items": [
       {
         "label": "LinkedIn",
-        "detail": "Recommendations, career history, and featured projects",
-        "url": "https://www.linkedin.com/in/talha-bilal-a74477154"
+        "detail": "Career history, recommendations, featured portfolio",
+        "url": "https://www.linkedin.com/in/talha-bilal-a74477154",
+        "icon": "linkedin",
+        "cta": "Open LinkedIn"
       },
       {
         "label": "GitHub samples",
-        "detail": "trust-platform-samples — Keycloak SPI, CSC OpenAPI, architecture",
-        "url": "https://github.com/talha-bilal/trust-platform-samples"
+        "detail": "trust-platform-samples — SPI, OpenAPI, architecture docs",
+        "url": "https://github.com/talha-bilal/trust-platform-samples",
+        "icon": "repo",
+        "cta": "Open samples repo"
       },
       {
         "label": "GitHub profile",
-        "detail": "All repositories and activity",
-        "url": "https://github.com/talha-bilal"
+        "detail": "All public repositories and contributions",
+        "url": "https://github.com/talha-bilal",
+        "icon": "github",
+        "cta": "View profile"
       },
       {
         "label": "Resume PDF",
         "detail": "One-page overview for recruiters and ATS",
         "url": "Talha_Bilal_CV.pdf",
-        "internal": true
+        "internal": true,
+        "icon": "resume",
+        "cta": "Download resume"
       }
     ]
   },

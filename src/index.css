@@ -64,6 +64,70 @@
   .btn-ghost {
     @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-slate-300 transition hover:bg-white/5;
   }
+
+  .link-card {
+    @apply relative flex flex-col gap-3 overflow-hidden rounded-xl border border-white/10 bg-slate-900/70 p-4 shadow-md transition-shadow duration-300 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10;
+  }
+
+  .link-card-primary {
+    @apply border-teal-500/30 bg-gradient-to-br from-teal-500/10 via-slate-900/80 to-slate-900/70;
+  }
+
+  .link-card-glow {
+    @apply pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-teal-400/20 blur-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100;
+  }
+
+  .link-card-icon {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-teal-400;
+  }
+
+  .link-card-body {
+    @apply flex flex-1 flex-col gap-1;
+  }
+
+  .link-card-title {
+    @apply font-display text-sm font-semibold text-slate-100;
+  }
+
+  .link-card-desc {
+    @apply text-xs leading-relaxed text-slate-400;
+  }
+
+  .link-card-cta {
+    @apply inline-flex items-center gap-1.5 text-xs font-semibold text-teal-400;
+  }
+
+  .hero-actions {
+    @apply flex flex-wrap gap-3;
+  }
+
+  .btn-motion {
+    @apply transition-shadow duration-300 hover:shadow-lg hover:shadow-teal-500/15;
+  }
+}
+
+html:not(.dark) .link-card {
+  @apply border-slate-200 bg-white hover:border-teal-500/50 hover:shadow-teal-500/10;
+}
+
+html:not(.dark) .link-card-primary {
+  @apply from-teal-50/80 to-white;
+}
+
+html:not(.dark) .link-card-icon {
+  @apply border-slate-200 bg-slate-50 text-teal-700;
+}
+
+html:not(.dark) .link-card-title {
+  @apply text-slate-900;
+}
+
+html:not(.dark) .link-card-desc {
+  @apply text-slate-600;
+}
+
+html:not(.dark) .link-card-cta {
+  @apply text-teal-700;
 }
 
 html:not(.dark) .card-dark,
