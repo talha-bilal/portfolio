@@ -74,7 +74,6 @@ export const experience = [
       "Built PKI infrastructure: certificate authority, OCSP/CRL responders, and full lifecycle management.",
       "Developed S/MIME/CMS email signing and Crypto-Core microservices integrated with enterprise HSMs.",
       "Integrated Bouncy Castle and IAIK with Spring Boot; established CI/CD, containers, and performance tuning.",
-      "Delivered Keycloak-based SSO and OIDC for internal services; extended Keycloak with custom SPI modules.",
       "Implemented Java Card applets and host applications for smart-card issuance and secure crypto workflows.",
       "Delivered multi-tenant signing services with audit trails and compliance-oriented workflows.",
     ],

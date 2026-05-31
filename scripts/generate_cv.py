@@ -45,7 +45,6 @@ EXPERIENCE = [
         [
             "Built CA, OCSP/CRL, and certificate lifecycle management.",
             "Developed S/MIME/CMS signing and Crypto-Core microservices with HSM integration.",
-            "Delivered Keycloak SSO/OIDC and custom SPI extensions for internal services.",
             "Implemented Java Card applets and host apps for smart-card issuance workflows.",
             "Implemented CI/CD, Docker, and performance tuning for production crypto services.",
         ],
