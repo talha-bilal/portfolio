@@ -3,7 +3,7 @@
     "name": "Talha Bilal",
     "headline": "PKI, digital signing & IAM platforms in Java Spring Boot",
     "role": "Senior Software Engineer & Technical Team Lead",
-    "focus": "Java Spring Boot · Keycloak IAM · AD/LDAP · OIDC/SAML SSO · PKI · HSM",
+    "focus": "Java Spring Boot · Keycloak IAM · AD/LDAP · OIDC SSO · PKI · HSM",
     "location": "Pakistan (UTC+5)",
     "availability": "Available worldwide — full-time & contract",
     "email": "talha.at43@gmail.com",
@@ -14,15 +14,15 @@
     "profileImage": "profile.jpeg",
     "languages": ["English — professional (written & verbal)", "Urdu — native"]
   },
-  "summary": "Senior engineer and technical lead with 5+ years shipping secure, enterprise-grade systems in Java Spring Boot, PKI, and identity. Operates on-prem Keycloak in production — Active Directory / LDAP federation, OIDC and SAML application SSO, realms and client policies, plus custom SPIs where needed. Also specializes in certificate lifecycle, CSC remote signing, HSM integration, and Java Card — for regulated signing platforms and centralized IAM.",
+  "summary": "Senior engineer and technical lead with 5+ years shipping secure, enterprise-grade systems in Java Spring Boot, PKI, and identity. Operates on-prem Keycloak in production — Active Directory / LDAP federation, OIDC application SSO, realms and client policies, plus custom SPIs where needed. Also specializes in certificate lifecycle, CSC remote signing, HSM integration, and Java Card — for regulated signing platforms and centralized IAM.",
   "about": {
     "paragraphs": [
       "I help organizations run trust infrastructure in production: certificate authorities, OCSP/CRL, CSC-based remote signing, S/MIME and PDF signing, timestamp authorities, and HSM-backed crypto services.",
-      "For IAM, I deploy and operate on-prem Keycloak: federate Active Directory over LDAP, map groups to roles, and integrate business applications with OIDC or SAML for single sign-on — with documentation and handover suitable for enterprise or integrator-led projects.",
+      "For IAM, I deploy and operate on-prem Keycloak: federate Active Directory over LDAP, map groups to roles, and integrate business applications with OIDC for single sign-on — with documentation and handover suitable for enterprise or integrator-led projects.",
       "As Technical Team Lead at Dictalabs, I combine architecture, hands-on Java development, and code review — working with product and security stakeholders in audit-sensitive environments.",
       "I collaborate effectively with distributed teams: clear written specs, async communication, and overlap with European and Middle Eastern business hours."
     ],
-    "domains": ["On-prem Keycloak IAM", "AD / LDAP federation", "OIDC & SAML SSO", "Digital signing & e-trust", "PKI / CA operations", "Multi-tenant B2B SaaS"]
+    "domains": ["On-prem Keycloak IAM", "AD / LDAP federation", "OIDC SSO", "Digital signing & e-trust", "PKI / CA operations", "Multi-tenant B2B SaaS"]
   },
   "globalWork": {
     "title": "Working with international teams",
@@ -50,7 +50,7 @@
     { "value": "8+", "label": "Production systems" },
     { "value": "Lead", "label": "PKI & signing squad" }
   ],
-  "compliance": ["Enterprise SSO (OIDC/SAML)", "LDAP / Active Directory federation", "Audit-ready signing workflows", "Multi-tenant isolation", "GDPR-aware IAM design"],
+  "compliance": ["Enterprise SSO (OIDC)", "LDAP / Active Directory federation", "Audit-ready signing workflows", "Multi-tenant isolation", "GDPR-aware IAM design"],
   "skillGroups": [
     {
       "label": "Backend & APIs",
@@ -75,7 +75,6 @@
         "Keycloak (on-prem)",
         "LDAP / Active Directory federation",
         "OAuth 2.0 / OIDC",
-        "SAML 2.0 SSO",
         "Application SSO integration",
         "Keycloak SPI (Authenticator, User Storage, Protocol Mapper)",
         "Bouncy Castle",
@@ -117,7 +116,7 @@
         "Lead engineers owning microservices for PKI, CMS/PKCS#7 signing, and HSM-backed key operations across production tenants.",
         "Architected PKCS#11 integration layer (AWS CloudHSM, SoftHSM2) — improved signing stability via pooled sessions, idempotent retries, and operational runbooks.",
         "Built CSC-compliant remote signing service (credentials, info, signatures, timestamps) with OAuth-secured API access and HSM-backed signature creation for client apps.",
-        "Delivered on-prem Keycloak in production: LDAP/Active Directory user federation, group-to-role mapping, OIDC and SAML clients for application SSO, realm policies, and custom SPIs for certificate-aware login where required.",
+        "Delivered on-prem Keycloak in production: LDAP/Active Directory user federation, group-to-role mapping, OIDC clients for application SSO, realm policies, and custom SPIs for certificate-aware login where required.",
         "Ship Java Card 3.x applets (RSA/ECDSA on-card) with GlobalPlatform lifecycle and host issuance tooling.",
         "Drive RFC 3161 timestamping, OCSP/CRL hardening, and incident response with security and product leadership."
       ]
@@ -143,9 +142,9 @@
       "title": "On-prem Keycloak with Active Directory & application SSO",
       "problem": "Organization needed centralized identity on-premises: Windows/AD users for login, single sign-on across internal applications, and a maintainable IAM layer without duplicating auth in every service.",
       "role": "Technical lead — Keycloak deployment, AD/LDAP federation, and application integration.",
-      "approach": "Deployed and operated on-prem Keycloak with PostgreSQL; configured LDAP user federation to Active Directory (bind account, user/group sync, role mapping); registered OIDC and SAML clients per application; documented realm export, TLS/reverse-proxy setup, and admin handover.",
+      "approach": "Deployed and operated on-prem Keycloak with PostgreSQL; configured LDAP user federation to Active Directory (bind account, user/group sync, role mapping); registered OIDC clients per application; documented realm export, TLS/reverse-proxy setup, and admin handover.",
       "outcome": "Employees sign in once with AD credentials and access integrated apps via SSO; IT has one IdP to manage users, clients, and policies instead of scattered login implementations.",
-      "tech": ["Keycloak", "Active Directory", "LDAP", "OIDC", "SAML", "SSO"]
+      "tech": ["Keycloak", "Active Directory", "LDAP", "OIDC", "SSO"]
     },
     {
       "id": "keycloak-pki",
@@ -181,9 +180,9 @@
       "featured": true,
       "name": "Keycloak IAM Integration",
       "impact": "On-prem IAM — AD/LDAP federation & application SSO",
-      "desc": "Production Keycloak: Active Directory federation over LDAP, OIDC and SAML clients for business applications, realm and client policies, plus custom SPI providers for advanced login flows.",
-      "tech": ["Keycloak", "LDAP", "Active Directory", "OIDC", "SAML", "OAuth 2.0", "Java SPI", "Spring Boot"],
-      "cvLine": "Keycloak IAM - on-prem, AD/LDAP federation, OIDC/SAML SSO, custom SPIs"
+      "desc": "Production Keycloak: Active Directory federation over LDAP, OIDC clients for business applications, realm and client policies, plus custom SPI providers for advanced login flows.",
+      "tech": ["Keycloak", "LDAP", "Active Directory", "OIDC", "OAuth 2.0", "Java SPI", "Spring Boot"],
+      "cvLine": "Keycloak IAM - on-prem, AD/LDAP federation, OIDC SSO, custom SPIs"
     },
     {
       "id": "csc",
@@ -265,10 +264,10 @@
     "items": [
       {
         "name": "Keycloak IAM Integration",
-        "detail": "On-prem Keycloak, AD/LDAP federation, OIDC/SAML SSO patterns, SPI sample, Docker demo",
+        "detail": "On-prem Keycloak, AD/LDAP federation, OIDC SSO patterns, SPI sample, Docker demo",
         "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/keycloak-pki-authenticator",
         "icon": "keycloak",
-        "tech": ["Keycloak", "LDAP", "OIDC", "SAML", "Java SPI"]
+        "tech": ["Keycloak", "LDAP", "OIDC", "Java SPI"]
       },
       {
         "name": "CSC Remote Signing Service",
@@ -356,13 +355,13 @@
     { "id": "contact", "label": "Contact" }
   ],
   "cv": {
-    "tagline": "Java | Spring Boot | Keycloak | AD/LDAP | OIDC/SAML SSO | PKI | HSM",
+    "tagline": "Java | Spring Boot | Keycloak | AD/LDAP | OIDC SSO | PKI | HSM",
     "contactLines": [
       "talha.at43@gmail.com",
       "linkedin.com/in/talha-bilal-a74477154",
       "github.com/talha-bilal",
       "talha-bilal.github.io/portfolio"
     ],
-    "summaryShort": "Senior Java engineer & team lead — on-prem Keycloak (AD/LDAP federation, OIDC/SAML application SSO), plus PKI, CSC remote signing, custom SPI, Java Card, and HSM platforms. Delivers IAM and signing microservices for regulated, multi-tenant environments."
+    "summaryShort": "Senior Java engineer & team lead — on-prem Keycloak (AD/LDAP federation, OIDC application SSO), plus PKI, CSC remote signing, custom SPI, Java Card, and HSM platforms. Delivers IAM and signing microservices for regulated, multi-tenant environments."
   }
 }
