@@ -263,8 +263,15 @@
     "repo": "https://github.com/talha-bilal/trust-platform-samples",
     "items": [
       {
+        "name": "Keycloak AD & SSO Demo",
+        "detail": "Runnable client lab — on-prem Keycloak, LDAP/AD federation, two OIDC apps, presenter walkthrough",
+        "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/keycloak-ad-sso-demo",
+        "icon": "keycloak",
+        "tech": ["Keycloak", "LDAP", "OIDC", "Docker"]
+      },
+      {
         "name": "Keycloak IAM Integration",
-        "detail": "On-prem Keycloak, AD/LDAP federation, OIDC SSO patterns, SPI sample, Docker demo",
+        "detail": "Custom SPI, certificate-aware login, architecture diagrams, Docker demo",
         "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/keycloak-pki-authenticator",
         "icon": "keycloak",
         "tech": ["Keycloak", "LDAP", "OIDC", "Java SPI"]
