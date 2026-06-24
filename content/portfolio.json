@@ -264,7 +264,7 @@
     "items": [
       {
         "name": "Keycloak AD & SSO Demo",
-        "detail": "Runnable client lab — on-prem Keycloak, LDAP/AD federation, two OIDC apps, presenter walkthrough",
+        "detail": "Runnable lab + PDF guide — on-prem Keycloak, AD/LDAP federation, OIDC SSO across apps",
         "url": "https://github.com/talha-bilal/trust-platform-samples/tree/main/keycloak-ad-sso-demo",
         "icon": "keycloak",
         "tech": ["Keycloak", "LDAP", "OIDC", "Docker"]
