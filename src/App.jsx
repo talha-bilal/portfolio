@@ -418,6 +418,16 @@ export default function Portfolio() {
               >
                 {site.email}
               </motion.a>
+              {site.phone && (
+                <motion.a
+                  href={`tel:${site.phone.replace(/\s/g, "")}`}
+                  className="btn-secondary btn-motion"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  {site.phone}
+                </motion.a>
+              )}
               <motion.a
                 href={site.linkedin}
                 className="btn-secondary btn-motion"
