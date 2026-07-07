@@ -5,8 +5,7 @@
     "role": "Senior Software Engineer & Technical Team Lead",
     "focus": "Java Spring Boot · Keycloak IAM · AD/LDAP · OIDC SSO · PKI · HSM",
     "location": "Pakistan (UTC+5)",
-    "availability": "Available worldwide — full-time & contract",
-    "openToRoles": "Open to remote roles: Senior Java / Spring Boot Engineer · Backend / Platform · IAM & PKI / Security Engineering",
+    "availability": "Available for full-time, contract & projects",
     "email": "talha.at43@gmail.com",
     "phone": "+923043742912",
     "linkedin": "https://www.linkedin.com/in/talha-bilal-a74477154",
@@ -16,7 +15,7 @@
     "profileImage": "profile.jpeg",
     "languages": ["English — professional (written & verbal)", "Urdu — native"]
   },
-  "summary": "Senior Java / Spring Boot engineer and technical lead with 5+ years building secure, enterprise-grade microservices and REST APIs. Delivers production on-prem Keycloak — Active Directory / LDAP federation, OIDC application SSO, realm and client policies, and custom SPIs — alongside PKI, CSC remote signing, HSM integration, and Java Card for regulated, multi-tenant platforms. Remote-ready, fluent in written English, and experienced working async with distributed teams.",
+  "summary": "Senior Java / Spring Boot engineer and technical lead with 5+ years building secure, enterprise-grade microservices and REST APIs. Delivers production on-prem Keycloak — Active Directory / LDAP federation, OIDC application SSO, realm and client policies, and custom SPIs — alongside PKI, CSC remote signing, HSM integration, and Java Card for regulated, multi-tenant platforms. Strong written English and experience leading and collaborating in distributed teams.",
   "about": {
     "paragraphs": [
       "I help organizations run trust infrastructure in production: certificate authorities, OCSP/CRL, CSC-based remote signing, S/MIME and PDF signing, timestamp authorities, and HSM-backed crypto services.",
@@ -27,15 +26,15 @@
     "domains": ["On-prem Keycloak IAM", "AD / LDAP federation", "OIDC SSO", "Digital signing & e-trust", "PKI / CA operations", "Multi-tenant B2B SaaS"]
   },
   "lookingFor": {
-    "title": "What I'm looking for",
-    "intro": "Remote-first roles where deep Java / Spring Boot experience and a security mindset add real value.",
+    "title": "Focus & engagements",
+    "intro": "Hands-on engineering and technical leadership where Java / Spring Boot depth and a security mindset matter — from greenfield builds to production hardening and integrator-led delivery.",
     "roles": [
       "Senior Java / Spring Boot Engineer",
       "Backend / Platform Engineer",
       "IAM / Identity Engineer (Keycloak, OIDC, SSO)",
       "PKI / Security Engineer"
     ],
-    "arrangements": ["Full-time remote", "Long-term contract", "Employer of record (EOR)"]
+    "arrangements": ["Full-time employment", "Contract & consulting", "Fixed-scope projects"]
   },
   "globalWork": {
     "title": "Working with international teams",
@@ -50,11 +49,11 @@
       },
       {
         "label": "Delivery style",
-        "detail": "Remote-friendly rituals: written RFCs, PR-based review, CI-gated releases, and on-call runbooks"
+        "detail": "Structured delivery: written RFCs, PR-based review, CI-gated releases, and on-call runbooks"
       },
       {
         "label": "Engagement",
-        "detail": "Open to employer-of-record, direct contract, or full-time remote with transparent availability"
+        "detail": "Full-time, contract, and project-based work with clear scope and delivery milestones"
       }
     ]
   },
@@ -376,8 +375,8 @@
   ],
   "cv": {
     "tagline": "Java | Spring Boot | Keycloak | AD/LDAP | OIDC SSO | PKI | HSM",
-    "availabilityLine": "Remote (UTC+5, 4-6h EU/ME overlap) | English - professional | Open to full-time & contract",
-    "targetRoles": "Target roles: Senior Java / Spring Boot Engineer | Backend / Platform | IAM & PKI / Security Engineering",
+    "availabilityLine": "Pakistan (UTC+5) | English - professional | Full-time, contract & projects",
+    "targetRoles": "Specializations: Senior Java / Spring Boot | Backend / Platform | IAM & PKI / Security Engineering",
     "contactLines": [
       "talha.at43@gmail.com",
       "Phone: +923043742912",

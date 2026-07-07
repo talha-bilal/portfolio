@@ -138,7 +138,6 @@ export default function Portfolio() {
             <div>
             <div className="flex flex-wrap gap-2">
               <span className="badge">{site.availability}</span>
-              {site.openToRoles && <span className="badge">Open to remote roles</span>}
             </div>
             <p className={`mt-5 text-sm font-medium uppercase tracking-widest ${accent}`}>{site.role}</p>
             <h1 className="font-display mt-2 max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl lg:text-6xl">
@@ -257,7 +256,7 @@ export default function Portfolio() {
               <p className={`mt-2 text-sm ${body}`}>{lookingFor.intro}</p>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
-                  <h4 className={`text-xs font-semibold uppercase tracking-wider ${accent}`}>Roles</h4>
+                  <h4 className={`text-xs font-semibold uppercase tracking-wider ${accent}`}>Specializations</h4>
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {lookingFor.roles.map((r) => (
                       <li key={r}>
@@ -267,7 +266,7 @@ export default function Portfolio() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className={`text-xs font-semibold uppercase tracking-wider ${accent}`}>Engagement</h4>
+                  <h4 className={`text-xs font-semibold uppercase tracking-wider ${accent}`}>Engagements</h4>
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {lookingFor.arrangements.map((a) => (
                       <li key={a}>
@@ -439,7 +438,7 @@ export default function Portfolio() {
           <motion.div {...fade} className={`${card} border-teal-500/20 p-8 text-center md:p-10`}>
             <h2 className="font-display text-2xl font-semibold md:text-3xl">Let&apos;s work together</h2>
             <p className={`mx-auto mt-3 max-w-lg text-sm ${muted}`}>
-              Hiring for PKI, IAM, digital signing, or security-focused backend roles? Email role, stack, and timezone —
+              Building PKI, IAM, digital signing, or security-focused backend systems? Share the role, stack, and timeline —
               I reply within 1–2 business days.
             </p>
             <p className={`mx-auto mt-2 text-xs ${muted}`}>{site.location}</p>
