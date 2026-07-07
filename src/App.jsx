@@ -5,6 +5,7 @@ import {
   site,
   summary,
   about,
+  lookingFor,
   globalWork,
   skillGroups,
   highlights,
@@ -77,6 +78,7 @@ export default function Portfolio() {
 
   return (
     <div className={shell}>
+      <a href="#top" className="skip-link">Skip to content</a>
       <div className="hero-glow pointer-events-none fixed inset-0 -z-10" aria-hidden />
 
       <header className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
@@ -134,7 +136,10 @@ export default function Portfolio() {
         <section className="py-14 md:py-20">
           <motion.div {...fade} className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-start">
             <div>
-            <span className="badge">{site.availability}</span>
+            <div className="flex flex-wrap gap-2">
+              <span className="badge">{site.availability}</span>
+              {site.openToRoles && <span className="badge">Open to remote roles</span>}
+            </div>
             <p className={`mt-5 text-sm font-medium uppercase tracking-widest ${accent}`}>{site.role}</p>
             <h1 className="font-display mt-2 max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl lg:text-6xl">
               {site.headline}
@@ -245,6 +250,35 @@ export default function Portfolio() {
               ))}
             </dl>
           </motion.div>
+
+          {lookingFor && (
+            <motion.div {...fade} className={`${card} mt-4 border-teal-500/20 p-6`}>
+              <h3 className="font-display text-lg font-semibold">{lookingFor.title}</h3>
+              <p className={`mt-2 text-sm ${body}`}>{lookingFor.intro}</p>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <h4 className={`text-xs font-semibold uppercase tracking-wider ${accent}`}>Roles</h4>
+                  <ul className="mt-2 flex flex-wrap gap-2">
+                    {lookingFor.roles.map((r) => (
+                      <li key={r}>
+                        <span className="tech-pill">{r}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className={`text-xs font-semibold uppercase tracking-wider ${accent}`}>Engagement</h4>
+                  <ul className="mt-2 flex flex-wrap gap-2">
+                    {lookingFor.arrangements.map((a) => (
+                      <li key={a}>
+                        <span className="tech-pill">{a}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          )}
 
           <motion.div {...fade} className="mt-6">
             <h3 className="font-display mb-4 text-lg font-semibold">{proof.title}</h3>

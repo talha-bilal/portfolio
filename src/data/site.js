@@ -3,6 +3,7 @@ import portfolio from "../../content/portfolio.json";
 export const site = portfolio.site;
 export const summary = portfolio.summary;
 export const about = portfolio.about;
+export const lookingFor = portfolio.lookingFor;
 export const globalWork = portfolio.globalWork;
 export const skillGroups = portfolio.skillGroups;
 export const highlights = portfolio.highlights;

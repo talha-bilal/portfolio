@@ -54,6 +54,23 @@ class CV(FPDF):
         self.set_font("Helvetica", "", 9)
         for line in cv["contactLines"]:
             self.cell(0, 5, ascii_safe(line), new_x="LMARGIN", new_y="NEXT")
+
+        availability = cv.get("availabilityLine")
+        target_roles = cv.get("targetRoles")
+        if availability or target_roles:
+            self.ln(1)
+            w = self.w - self.l_margin - self.r_margin
+            self.set_text_color(20, 20, 20)
+            if availability:
+                self.set_font("Helvetica", "B", 9)
+                self.set_x(self.l_margin)
+                self.multi_cell(w, 5, ascii_safe(availability), new_x="LMARGIN", new_y="NEXT")
+            if target_roles:
+                self.set_font("Helvetica", "", 9)
+                self.set_x(self.l_margin)
+                self.multi_cell(w, 5, ascii_safe(target_roles), new_x="LMARGIN", new_y="NEXT")
+            self.set_text_color(0, 0, 0)
+
         self.ln(2)
         self.set_font("Helvetica", "", 9)
         self.multi_cell(0, 4, ascii_safe(summary_text))
@@ -87,6 +104,11 @@ def main():
     pdf.set_auto_page_break(auto=True, margin=14)
     pdf.add_page()
     pdf.header_block(data)
+
+    key_strengths = data.get("cv", {}).get("keyStrengths")
+    if key_strengths:
+        pdf.section("KEY STRENGTHS")
+        pdf.bullets(key_strengths)
 
     pdf.section("CORE SKILLS")
     pdf.body_text(skills_line(data))

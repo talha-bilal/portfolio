@@ -6,6 +6,7 @@
     "focus": "Java Spring Boot · Keycloak IAM · AD/LDAP · OIDC SSO · PKI · HSM",
     "location": "Pakistan (UTC+5)",
     "availability": "Available worldwide — full-time & contract",
+    "openToRoles": "Open to remote roles: Senior Java / Spring Boot Engineer · Backend / Platform · IAM & PKI / Security Engineering",
     "email": "talha.at43@gmail.com",
     "phone": "+923043742912",
     "linkedin": "https://www.linkedin.com/in/talha-bilal-a74477154",
@@ -15,7 +16,7 @@
     "profileImage": "profile.jpeg",
     "languages": ["English — professional (written & verbal)", "Urdu — native"]
   },
-  "summary": "Senior engineer and technical lead with 5+ years shipping secure, enterprise-grade systems in Java Spring Boot, PKI, and identity. Operates on-prem Keycloak in production — Active Directory / LDAP federation, OIDC application SSO, realms and client policies, plus custom SPIs where needed. Also specializes in certificate lifecycle, CSC remote signing, HSM integration, and Java Card — for regulated signing platforms and centralized IAM.",
+  "summary": "Senior Java / Spring Boot engineer and technical lead with 5+ years building secure, enterprise-grade microservices and REST APIs. Delivers production on-prem Keycloak — Active Directory / LDAP federation, OIDC application SSO, realm and client policies, and custom SPIs — alongside PKI, CSC remote signing, HSM integration, and Java Card for regulated, multi-tenant platforms. Remote-ready, fluent in written English, and experienced working async with distributed teams.",
   "about": {
     "paragraphs": [
       "I help organizations run trust infrastructure in production: certificate authorities, OCSP/CRL, CSC-based remote signing, S/MIME and PDF signing, timestamp authorities, and HSM-backed crypto services.",
@@ -24,6 +25,17 @@
       "I collaborate effectively with distributed teams: clear written specs, async communication, and overlap with European and Middle Eastern business hours."
     ],
     "domains": ["On-prem Keycloak IAM", "AD / LDAP federation", "OIDC SSO", "Digital signing & e-trust", "PKI / CA operations", "Multi-tenant B2B SaaS"]
+  },
+  "lookingFor": {
+    "title": "What I'm looking for",
+    "intro": "Remote-first roles where deep Java / Spring Boot experience and a security mindset add real value.",
+    "roles": [
+      "Senior Java / Spring Boot Engineer",
+      "Backend / Platform Engineer",
+      "IAM / Identity Engineer (Keycloak, OIDC, SSO)",
+      "PKI / Security Engineer"
+    ],
+    "arrangements": ["Full-time remote", "Long-term contract", "Employer of record (EOR)"]
   },
   "globalWork": {
     "title": "Working with international teams",
@@ -364,6 +376,8 @@
   ],
   "cv": {
     "tagline": "Java | Spring Boot | Keycloak | AD/LDAP | OIDC SSO | PKI | HSM",
+    "availabilityLine": "Remote (UTC+5, 4-6h EU/ME overlap) | English - professional | Open to full-time & contract",
+    "targetRoles": "Target roles: Senior Java / Spring Boot Engineer | Backend / Platform | IAM & PKI / Security Engineering",
     "contactLines": [
       "talha.at43@gmail.com",
       "Phone: +923043742912",
@@ -371,6 +385,13 @@
       "github.com/talha-bilal",
       "talha-bilal.github.io/portfolio"
     ],
-    "summaryShort": "Senior Java engineer & team lead — on-prem Keycloak (AD/LDAP federation, OIDC application SSO), plus PKI, CSC remote signing, custom SPI, Java Card, and HSM platforms. Delivers IAM and signing microservices for regulated, multi-tenant environments."
+    "summaryShort": "Senior Java / Spring Boot engineer & technical lead — on-prem Keycloak (AD/LDAP federation, OIDC application SSO, custom SPIs), plus PKI, CSC remote signing, Java Card, and HSM platforms. Ships secure microservices and REST APIs for regulated, multi-tenant environments.",
+    "keyStrengths": [
+      "Java 17/21 & Spring Boot microservices - REST/OpenAPI, Spring Security, event-driven (RabbitMQ)",
+      "On-prem Keycloak - AD/LDAP federation, OIDC SSO, realm/client policies, custom SPIs",
+      "PKI & digital signing - CA, OCSP/CRL, CSC remote signing, S/MIME, RFC 3161 timestamping",
+      "HSM integration - PKCS#11, AWS CloudHSM, session pooling and production hardening",
+      "Team leadership - architecture, code review, CI/CD, on-call runbooks in audit-sensitive domains"
+    ]
   }
 }
