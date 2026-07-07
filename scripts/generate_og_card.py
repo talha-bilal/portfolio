@@ -91,51 +91,52 @@ def main() -> None:
     img = Image.new("RGB", (W, H), (15, 23, 42))
     draw = ImageDraw.Draw(img)
 
-    # Soft teal glow behind centered text (safe for square crop)
-    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    glow_draw = ImageDraw.Draw(glow)
-    glow_draw.ellipse((340, 80, 860, 550), fill=(45, 212, 191, 28))
-    glow_draw.ellipse((420, 140, 780, 490), fill=(99, 102, 241, 18))
-    img = Image.alpha_composite(img.convert("RGBA"), glow).convert("RGB")
-    draw = ImageDraw.Draw(img)
+    # Teal accent bar top and bottom (crisp, survives scaling)
+    draw.rectangle((0, 0, W, 12), fill=(45, 212, 191))
+    draw.rectangle((0, H - 12, W, H), fill=(45, 212, 191))
 
-    name_font = load_font("bold", 72)
-    role_font = load_font("medium", 36)
-    focus_font = load_font("regular", 30)
-    url_font = load_font("regular", 22)
+    name_font = load_font("bold", 104)
+    role_font = load_font("bold", 42)
+    focus_font = load_font("medium", 38)
+    url_font = load_font("medium", 28)
 
     name = site["name"]
-    role = site["role"]
-    focus = site["focus"]
+    # Balanced two-line role for clean centered layout
+    role_lines = ["Senior Software Engineer", "& Technical Team Lead"]
+    # Short, high-impact skills line on a single row
+    focus = "Java  ·  Spring Boot  ·  Keycloak  ·  PKI  ·  HSM"
     url = site["portfolio"].replace("https://", "").rstrip("/")
 
-    max_text_w = 560  # fits inside WhatsApp square crop (630px wide)
+    max_text_w = 1060
 
-    role_lines = wrap_line(draw, role, role_font, max_text_w)
     focus_lines = wrap_line(draw, focus, focus_font, max_text_w)
+
+    gap_name = 34
+    gap_role = 14
+    gap_focus = 30
 
     block_h = (
         text_height(draw, name, name_font)
-        + 18
-        + sum(text_height(draw, line, role_font) + 6 for line in role_lines)
-        + 12
-        + sum(text_height(draw, line, focus_font) + 8 for line in focus_lines)
+        + gap_name
+        + sum(text_height(draw, line, role_font) + gap_role for line in role_lines)
+        + gap_focus
+        + sum(text_height(draw, line, focus_font) + 10 for line in focus_lines)
     )
-    y = (H - block_h) // 2
+    y = (H - block_h) // 2 - 10
 
-    y = draw_centered(draw, y, name, name_font, (255, 255, 255), stroke=2, stroke_fill=(15, 23, 42))
-    y += 18
+    y = draw_centered(draw, y, name, name_font, (255, 255, 255))
+    y += gap_name
 
     for line in role_lines:
-        y = draw_centered(draw, y, line, role_font, (45, 212, 191), stroke=1, stroke_fill=(15, 23, 42))
-        y += 6
-    y += 6
+        y = draw_centered(draw, y, line, role_font, (94, 234, 212))
+        y += gap_role
+    y += gap_focus
 
     for line in focus_lines:
-        y = draw_centered(draw, y, line, focus_font, (203, 213, 225), stroke=1, stroke_fill=(15, 23, 42))
-        y += 8
+        y = draw_centered(draw, y, line, focus_font, (226, 232, 240))
+        y += 10
 
-    draw_centered(draw, H - 52, url, url_font, (100, 116, 139))
+    draw_centered(draw, H - 56, url, url_font, (148, 163, 184))
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     img.save(OUT, "PNG", optimize=True)
